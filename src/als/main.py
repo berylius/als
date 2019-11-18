@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 
 import psutil
+from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtWidgets import QApplication
 
 from als import config
@@ -70,12 +71,16 @@ def main():
 
         window.reset_image_view()
 
-    _LOGGER.info(f"Astro Live Stacker version {VERSION} started in {startup.elapsed_in_milli_as_str} ms.")
+    _LOGGER.info(QApplication.translate(
+        "main",
+        f"Astro Live Stacker version {VERSION} started in {startup.elapsed_in_milli_as_str} ms."))
 
     app_return_code = app.exec()
     controller.shutdown()
 
-    _LOGGER.info(f"Astro Live Stacker terminated with return code = {app_return_code}")
+    _LOGGER.info(QApplication.translate(
+        "main",
+        f"Astro Live Stacker terminated with return code = {app_return_code}"))
 
     sys.exit(app_return_code)
 
