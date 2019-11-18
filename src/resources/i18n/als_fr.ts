@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0">
+<!DOCTYPE TS>
+<TS version="2.1" language="fr_FR">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -48,72 +49,72 @@
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="14"/>
         <source>ALS preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Préférences ALS</translation>
     </message>
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="20"/>
         <source>Pathes</source>
-        <translation type="unfinished"></translation>
+        <translation>Chemins</translation>
     </message>
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="28"/>
         <source>&amp;Scan folder :</source>
-        <translation type="unfinished"></translation>
+        <translation>Dossier &amp;scanné :</translation>
     </message>
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="85"/>
         <source>Change...</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifier...</translation>
     </message>
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="62"/>
         <source>&amp;Work folder :</source>
-        <translation type="unfinished"></translation>
+        <translation>Dossier de tra&amp;vail :</translation>
     </message>
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="97"/>
         <source>File saving format</source>
-        <translation type="unfinished"></translation>
+        <translation>Format d&apos;écriture des fichiers</translation>
     </message>
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="103"/>
         <source>&amp;TIFF</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;TIFF</translation>
     </message>
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="110"/>
         <source>PN&amp;G</source>
-        <translation type="unfinished"></translation>
+        <translation>PN&amp;G</translation>
     </message>
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="117"/>
         <source>&amp;JPEG</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;JPEG</translation>
     </message>
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="127"/>
         <source>Web server</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveur web</translation>
     </message>
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="135"/>
         <source>Server &amp;port number (between 1024 and 65535) :</source>
-        <translation type="unfinished"></translation>
+        <translation>Numéro de &amp;port du serveur (entre 1024 et 65535) :</translation>
     </message>
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="161"/>
         <source>Web page &amp;refresh period (in seconds)</source>
-        <translation type="unfinished"></translation>
+        <translation>Période de &amp;rafraîchissement de la page web (en secondes) :</translation>
     </message>
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="199"/>
         <source>Misc</source>
-        <translation type="unfinished"></translation>
+        <translation>Misc</translation>
     </message>
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="205"/>
         <source>&amp;Debug logs (requires application restart)</source>
-        <translation type="unfinished"></translation>
+        <translation>Logs en &amp;debug (nécessite un redémarrage)</translation>
     </message>
     <message>
         <location filename="../../als/ui/prefs_ui.ui" line="233"/>
