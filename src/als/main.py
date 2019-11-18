@@ -9,7 +9,6 @@ import sys
 from pathlib import Path
 
 import psutil
-from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtWidgets import QApplication
 
 from als import config
