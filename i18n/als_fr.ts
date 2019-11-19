@@ -9,24 +9,9 @@
         <translation>A propos d&apos;ALS</translation>
     </message>
     <message>
-        <location filename="../src/als/ui/about_ui.ui" line="26"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;ALS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;ALS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/als/ui/about_ui.ui" line="33"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Astro Live Stacker&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Astro Live Stacker&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <location filename="../src/als/ui/about_ui.ui" line="57"/>
         <source>Version :</source>
         <translation>Version :</translation>
-    </message>
-    <message>
-        <location filename="../src/als/ui/about_ui.ui" line="64"/>
-        <source>DUMMY</source>
-        <translation>DUMMY</translation>
     </message>
     <message>
         <location filename="../src/als/ui/about_ui.ui" line="103"/>
@@ -145,27 +130,22 @@
     <message>
         <location filename="../src/als/ui/save_wait_ui.ui" line="17"/>
         <source>Saving remaining images</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrement des images restantes</translation>
     </message>
     <message>
         <location filename="../src/als/ui/save_wait_ui.ui" line="26"/>
         <source>Please wait while all images are saved to disk</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/als/ui/save_wait_ui.ui" line="35"/>
-        <source>Number of remaining images to save :</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/als/ui/save_wait_ui.ui" line="42"/>
-        <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation>Veuillez patienter pendant que toutes les images sont enregistrées sur disque</translation>
     </message>
     <message>
         <location filename="../src/als/ui/save_wait_ui.ui" line="51"/>
+        <source>Number of remaining images to save :</source>
+        <translation>Nombre d&apos;images restant à enregistrer :</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/save_wait_ui.ui" line="93"/>
         <source>Discard unsaved images and quit</source>
-        <translation type="unfinished"></translation>
+        <translation>Abandonner les images restantes et quitter</translation>
     </message>
 </context>
 <context>
