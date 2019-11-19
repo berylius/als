@@ -95,14 +95,14 @@ def main():
 
     _LOGGER.info(QApplication.translate(
         "main",
-        f"Astro Live Stacker version {VERSION} started in {startup.elapsed_in_milli_as_str} ms."))
+        "Astro Live Stacker version {} started in {} ms.").format(VERSION, startup.elapsed_in_milli_as_str))
 
     app_return_code = app.exec()
     controller.shutdown()
 
     _LOGGER.info(QApplication.translate(
         "main",
-        f"Astro Live Stacker terminated with return code = {app_return_code}"))
+        "Astro Live Stacker terminated with return code = {}").format(app_return_code))
 
     sys.exit(app_return_code)
 

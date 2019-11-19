@@ -156,6 +156,19 @@
     </message>
 </context>
 <context>
+    <name>main</name>
+    <message>
+        <location filename="../src/als/main.py" line="72"/>
+        <source>Astro Live Stacker version {} started in {} ms.</source>
+        <translation>Astro Live Stacker version {} démarré en {} ms.</translation>
+    </message>
+    <message>
+        <location filename="../src/als/main.py" line="79"/>
+        <source>Astro Live Stacker terminated with return code = {}</source>
+        <translation>Astro Live Stacker terminé avec code de retour = {}</translation>
+    </message>
+</context>
+<context>
     <name>stack_window</name>
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="20"/>
@@ -505,7 +518,7 @@
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="1075"/>
         <source>About ALS</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A propos d&apos;ALS</translation>
     </message>
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="1086"/>
