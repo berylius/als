@@ -13,7 +13,7 @@ from als import config
 from als.config import CouldNotSaveConfig
 from als.logic import Controller, SessionError, CriticalFolderMissing, WebServerStartFailure
 from als.code_utilities import log
-from als.model.data import STACKING_MODE_SUM, STACKING_MODE_MEAN, DYNAMIC_DATA
+from als.model.data import DYNAMIC_DATA, LocalizedStrings
 from als.ui.dialogs import PreferencesDialog, AboutDialog, error_box, warning_box, SaveWaitDialog, question, message_box
 from als.ui.params_utils import update_controls_from_params, update_params_from_controls, reset_params, \
     set_sliders_defaults
@@ -42,7 +42,7 @@ class MainWindow(QMainWindow):
 
         # populate stacking mode combo box=
         self._ui.cb_stacking_mode.blockSignals(True)
-        stacking_modes = [STACKING_MODE_SUM, STACKING_MODE_MEAN]
+        stacking_modes = [LocalizedStrings.STACKING_MODE_SUM, LocalizedStrings.STACKING_MODE_MEAN]
         for stacking_mode in stacking_modes:
             self._ui.cb_stacking_mode.addItem(stacking_mode)
         self._ui.cb_stacking_mode.setCurrentIndex(stacking_modes.index(self._controller.get_stacking_mode()))

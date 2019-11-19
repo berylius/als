@@ -14,9 +14,6 @@ _LOGGER = logging.getLogger(__name__)
 
 VERSION = als.__version__
 
-STACKING_MODE_SUM = "Sum"
-STACKING_MODE_MEAN = "Mean"
-
 WORKER_STATUS_BUSY = "Busy"
 WORKER_STATUS_IDLE = "-"
 
@@ -26,6 +23,17 @@ IMAGE_SAVE_TYPE_JPEG = "jpg"
 
 STACKED_IMAGE_FILE_NAME_BASE = "stack_image"
 WEB_SERVED_IMAGE_FILE_NAME_BASE = "web_image"
+
+
+class LocalizedStrings:
+    """
+    Holds global localized strings.
+
+    All strings are initialized with dummy text and MUST be defined in Controller.__init__()
+    """
+
+    STACKING_MODE_SUM = "TEMP"
+    STACKING_MODE_MEAN = "TEMP"
 
 
 # pylint: disable=R0902, R0903

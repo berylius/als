@@ -22,11 +22,11 @@ from multiprocessing import Process, Manager
 import astroalign as al
 import numpy as np
 from PyQt5.QtCore import pyqtSignal
+from als.model.data import LocalizedStrings
 from skimage.transform import SimilarityTransform
 
 from als.code_utilities import log, Timer
 from als.model.base import Image
-from als.model.data import STACKING_MODE_SUM, STACKING_MODE_MEAN
 from als.processing import QueueConsumer
 
 _LOGGER = logging.getLogger(__name__)
@@ -55,7 +55,7 @@ class Stacker(QueueConsumer):
         self._size: int = 0
         self._last_stacking_result: Image = None
         self._align_reference: Image = None
-        self._stacking_mode = STACKING_MODE_MEAN
+        self._stacking_mode = LocalizedStrings.STACKING_MODE_MEAN
         self._align_before_stack = True
 
     @property
@@ -391,9 +391,9 @@ class Stacker(QueueConsumer):
         """
 
         _LOGGER.debug(f"Stacking in {self._stacking_mode} mode...")
-        if self._stacking_mode == STACKING_MODE_SUM:
+        if self._stacking_mode == LocalizedStrings.STACKING_MODE_SUM:
             image.data = image.data + self._last_stacking_result.data
-        elif self._stacking_mode == STACKING_MODE_MEAN:
+        elif self._stacking_mode == LocalizedStrings.STACKING_MODE_MEAN:
             image.data = (self.size * self._last_stacking_result.data + image.data) / (self.size + 1)
         else:
             raise StackingError(f"Unsupported stacking mode : {self._stacking_mode}")

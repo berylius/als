@@ -28,6 +28,7 @@ from pathlib import Path
 from typing import List
 
 import als.model.data
+from PyQt5.QtCore import QObject
 from als import config
 from als.code_utilities import log, AlsException, SignalingQueue
 from als.crunching import compute_histograms_for_display
@@ -35,7 +36,7 @@ from als.io.input import InputScanner, ScannerStartError
 from als.io.network import get_ip, WebServer
 from als.io.output import ImageSaver
 from als.model.base import Image, Session
-from als.model.data import STACKING_MODE_MEAN, DYNAMIC_DATA, WORKER_STATUS_BUSY, WORKER_STATUS_IDLE
+from als.model.data import DYNAMIC_DATA, WORKER_STATUS_BUSY, WORKER_STATUS_IDLE, LocalizedStrings
 from als.model.params import ProcessingParameter
 from als.processing import Pipeline, Debayer, Standardize, ConvertForOutput, Levels, ColorBalance, AutoStretch
 from als.stack import Stacker
@@ -60,7 +61,7 @@ class WebServerStartFailure(AlsException):
 
 
 # pylint: disable=R0902, R0904
-class Controller:
+class Controller(QObject):
     """
     The application controller, in charge of implementing application logic
     """
@@ -69,6 +70,12 @@ class Controller:
 
     @log
     def __init__(self):
+
+        QObject.__init__(self)
+
+        # init i18n static strings
+        LocalizedStrings.STACKING_MODE_SUM = self.tr("Sum")
+        LocalizedStrings.STACKING_MODE_MEAN = self.tr("Mean")
 
         DYNAMIC_DATA.session.set_status(Session.stopped)
         DYNAMIC_DATA.web_server_is_running = False
@@ -90,7 +97,7 @@ class Controller:
 
         self._stacker_queue: SignalingQueue = DYNAMIC_DATA.stacker_queue
         self._stacker: Stacker = Stacker(self._stacker_queue)
-        self._stacker.stacking_mode = STACKING_MODE_MEAN
+        self._stacker.stacking_mode = LocalizedStrings.STACKING_MODE_MEAN
         self._stacker.align_before_stack = True
         self._stacker.start()
 

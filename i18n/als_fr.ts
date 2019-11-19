@@ -45,6 +45,19 @@
     </message>
 </context>
 <context>
+    <name>Controller</name>
+    <message>
+        <location filename="../src/als/logic.py" line="77"/>
+        <source>Sum</source>
+        <translation>Somme</translation>
+    </message>
+    <message>
+        <location filename="../src/als/logic.py" line="78"/>
+        <source>Mean</source>
+        <translation>Moyenne</translation>
+    </message>
+</context>
+<context>
     <name>PrefsDialog</name>
     <message>
         <location filename="../src/als/ui/prefs_ui.ui" line="14"/>
