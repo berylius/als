@@ -27,8 +27,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import List
 
-import als.model.data
 from PyQt5.QtCore import QObject
+
 from als import config
 from als.code_utilities import log, AlsException, SignalingQueue
 from als.crunching import compute_histograms_for_display
@@ -36,7 +36,11 @@ from als.io.input import InputScanner, ScannerStartError
 from als.io.network import get_ip, WebServer
 from als.io.output import ImageSaver
 from als.model.base import Image, Session
-from als.model.data import DYNAMIC_DATA, WORKER_STATUS_BUSY, WORKER_STATUS_IDLE, LocalizedStrings
+from als.model.data import (
+    DYNAMIC_DATA, WORKER_STATUS_BUSY, WORKER_STATUS_IDLE,
+    LocalizedStrings, STACKED_IMAGE_FILE_NAME_BASE,
+    IMAGE_SAVE_TYPE_JPEG, WEB_SERVED_IMAGE_FILE_NAME_BASE
+)
 from als.model.params import ProcessingParameter
 from als.processing import Pipeline, Debayer, Standardize, ConvertForOutput, Levels, ColorBalance, AutoStretch
 from als.stack import Stacker
@@ -70,6 +74,7 @@ class Controller(QObject):
 
     @log
     def __init__(self):
+        # pylint: disable=R0915
 
         QObject.__init__(self)
 
@@ -577,8 +582,8 @@ class Controller(QObject):
         with open(work_dir_path + "/index.html", 'w') as file:
             file.write(index_content)
 
-        standby_image_path = work_dir_path + "/" + als.model.data.WEB_SERVED_IMAGE_FILE_NAME_BASE
-        standby_image_path += '.' + als.model.data.IMAGE_SAVE_TYPE_JPEG
+        standby_image_path = work_dir_path + "/" + WEB_SERVED_IMAGE_FILE_NAME_BASE
+        standby_image_path += '.' + IMAGE_SAVE_TYPE_JPEG
         shutil.copy(resources_dir_path + "/waiting.jpg", standby_image_path)
 
     @log
@@ -593,20 +598,20 @@ class Controller(QObject):
         self.save_image(image,
                         config.get_image_save_format(),
                         config.get_work_folder_path(),
-                        als.model.data.STACKED_IMAGE_FILE_NAME_BASE)
+                        STACKED_IMAGE_FILE_NAME_BASE)
 
         if DYNAMIC_DATA.web_server_is_running:
             self.save_image(image,
-                            als.model.data.IMAGE_SAVE_TYPE_JPEG,
+                            IMAGE_SAVE_TYPE_JPEG,
                             config.get_work_folder_path(),
-                            als.model.data.WEB_SERVED_IMAGE_FILE_NAME_BASE)
+                            WEB_SERVED_IMAGE_FILE_NAME_BASE)
 
         # if user want to save every image, we save a timestamped version
         if self._save_every_image:
             self.save_image(image,
                             config.get_image_save_format(),
                             config.get_work_folder_path(),
-                            als.model.data.STACKED_IMAGE_FILE_NAME_BASE,
+                            STACKED_IMAGE_FILE_NAME_BASE,
                             add_timestamp=True)
 
     # pylint: disable=R0913
