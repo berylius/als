@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Astro Live Stacker</string>
+   <string notr="true">Astro Live Stacker</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_15">
@@ -165,7 +165,7 @@
              <string>START</string>
             </property>
             <property name="shortcut">
-             <string>R</string>
+             <string notr="true">R</string>
             </property>
            </widget>
           </item>
@@ -204,7 +204,7 @@
              <string>PAUSE</string>
             </property>
             <property name="shortcut">
-             <string>R</string>
+             <string notr="true">R</string>
             </property>
            </widget>
           </item>
@@ -246,7 +246,7 @@
              <string>STOP</string>
             </property>
             <property name="shortcut">
-             <string>X</string>
+             <string notr="true">X</string>
             </property>
            </widget>
           </item>
@@ -284,7 +284,7 @@
              <string>Align</string>
             </property>
             <property name="shortcut">
-             <string>A</string>
+             <string notr="true">A</string>
             </property>
             <property name="checked">
              <bool>true</bool>
@@ -351,7 +351,7 @@
            <string>START</string>
           </property>
           <property name="shortcut">
-           <string>W</string>
+           <string notr="true">W</string>
           </property>
          </widget>
         </item>
@@ -367,7 +367,7 @@
            <string>STOP</string>
           </property>
           <property name="shortcut">
-           <string>W</string>
+           <string notr="true">W</string>
           </property>
          </widget>
         </item>
@@ -400,7 +400,7 @@
              <string>Save current</string>
             </property>
             <property name="shortcut">
-             <string>S</string>
+             <string notr="true">S</string>
             </property>
            </widget>
           </item>
@@ -422,7 +422,7 @@
              <string>Save every frame</string>
             </property>
             <property name="shortcut">
-             <string>F</string>
+             <string notr="true">F</string>
             </property>
            </widget>
           </item>
@@ -1013,7 +1013,7 @@
     <string>Quit ALS</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+Q</string>
+    <string notr="true">Ctrl+Q</string>
    </property>
   </action>
   <action name="action_prefs">
@@ -1024,7 +1024,7 @@
     <string>Open preferences box</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+P</string>
+    <string notr="true">Ctrl+P</string>
    </property>
   </action>
   <action name="action_show_session_controls">
@@ -1044,7 +1044,7 @@
     <string>Show / hide main controls</string>
    </property>
    <property name="shortcut">
-    <string>B</string>
+    <string notr="true">B</string>
    </property>
   </action>
   <action name="action_show_session_log">
@@ -1064,7 +1064,7 @@
     <string>Show / hide session log</string>
    </property>
    <property name="shortcut">
-    <string>L</string>
+    <string notr="true">L</string>
    </property>
   </action>
   <action name="action_about_als">
@@ -1073,6 +1073,9 @@
    </property>
    <property name="statusTip">
     <string>About ALS</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
    </property>
   </action>
   <action name="action_show_processing_panel">
@@ -1092,7 +1095,7 @@
     <string>Show / hide processing panel</string>
    </property>
    <property name="shortcut">
-    <string>P</string>
+    <string notr="true">P</string>
    </property>
   </action>
   <action name="action_full_screen">
@@ -1106,7 +1109,7 @@
     <string>Full Screen</string>
    </property>
    <property name="shortcut">
-    <string>F11</string>
+    <string notr="true">F11</string>
    </property>
   </action>
   <action name="action_image_only">
@@ -1120,7 +1123,7 @@
     <string>Hide currently visible panels to maximize image display</string>
    </property>
    <property name="shortcut">
-    <string>I</string>
+    <string notr="true">I</string>
    </property>
   </action>
  </widget>
