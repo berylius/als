@@ -25,6 +25,7 @@ STACKED_IMAGE_FILE_NAME_BASE = "stack_image"
 WEB_SERVED_IMAGE_FILE_NAME_BASE = "web_image"
 
 
+# pylint: disable=R0903
 class LocalizedStrings:
     """
     Holds global localized strings.
