@@ -16,7 +16,7 @@ SOURCES += src/als/main.py \
   src/als/ui/windows.py \
   src/als/ui/dialogs.py
 
-TRANSLATIONS = src/resources/i18n/als_fr.ts
+TRANSLATIONS = i18n/als_fr.ts
 
 FORMS += src/als/ui/about_ui.ui \
   src/als/ui/als_ui.ui \
