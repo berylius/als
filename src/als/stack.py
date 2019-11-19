@@ -22,9 +22,9 @@ from multiprocessing import Process, Manager
 import astroalign as al
 import numpy as np
 from PyQt5.QtCore import pyqtSignal
-from als.model.data import LocalizedStrings
 from skimage.transform import SimilarityTransform
 
+from als.model.data import LocalizedStrings
 from als.code_utilities import log, Timer
 from als.model.base import Image
 from als.processing import QueueConsumer
