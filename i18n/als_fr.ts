@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="">
+<!DOCTYPE TS>
+<TS version="2.1" language="fr_FR">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -101,11 +102,6 @@
         <translation>Numéro de &amp;port du serveur (entre 1024 et 65535) :</translation>
     </message>
     <message>
-        <location filename="../src/als/ui/prefs_ui.ui" line="161"/>
-        <source>Web page &amp;refresh period (in seconds)</source>
-        <translation>Période de &amp;rafraîchissement de la page web (en secondes) :</translation>
-    </message>
-    <message>
         <location filename="../src/als/ui/prefs_ui.ui" line="199"/>
         <source>Misc</source>
         <translation>Misc</translation>
@@ -116,14 +112,19 @@
         <translation>Logs en &amp;debug (nécessite un redémarrage)</translation>
     </message>
     <message>
+        <location filename="../src/als/ui/prefs_ui.ui" line="161"/>
+        <source>Web page &amp;refresh period (in seconds) :</source>
+        <translation>Période de &amp;rafraîchissement de la page web (en secondes) :</translation>
+    </message>
+    <message>
         <location filename="../src/als/ui/prefs_ui.ui" line="233"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Annuler</translation>
     </message>
     <message>
         <location filename="../src/als/ui/prefs_ui.ui" line="240"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -157,12 +158,12 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/als/main.py" line="49"/>
+        <location filename="../src/als/main.py" line="69"/>
         <source>Astro Live Stacker version {VERSION} started in {startup.elapsed_in_milli_as_str} ms.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/als/main.py" line="56"/>
+        <location filename="../src/als/main.py" line="76"/>
         <source>Astro Live Stacker terminated with return code = {app_return_code}</source>
         <translation type="unfinished"></translation>
     </message>

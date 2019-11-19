@@ -1,6 +1,7 @@
 """
 Main module, basically in charge of application init / start
 """
+import locale
 import logging
 import os
 import platform
@@ -9,6 +10,7 @@ import sys
 from pathlib import Path
 
 import psutil
+from PyQt5.QtCore import QTranslator
 from PyQt5.QtWidgets import QApplication
 
 from als import config
@@ -63,6 +65,27 @@ def main():
 
             sheet = style_file.read()
             app.setStyleSheet(sheet)
+
+        # get system locale and install translators
+        system_locale = locale.getlocale()[0]
+        _LOGGER.debug(f"Detected system locale = {system_locale}")
+        locale_prefix = system_locale[:system_locale.find("_")]
+        _LOGGER.debug(f"System locale prefix = {locale_prefix}")
+        i18n_folder_path = Path(__file__).parent.parent.parent / 'i18n'
+        _LOGGER.debug(f"i18n folder path = {i18n_folder_path}")
+
+        translators = list()
+        for component in ["als", "qtbase"]:
+            i18n_file_name = f'{component}_{locale_prefix}'
+            translator = QTranslator()
+            if translator.load(i18n_file_name, str(i18n_folder_path)):
+                _LOGGER.debug(f"Translation successfully loaded for {i18n_file_name}")
+                translator.setObjectName(i18n_file_name)
+                translators.append(translator)
+
+        for translator in translators:
+            if app.installTranslator(translator):
+                _LOGGER.debug(f"Translator successfully installed for {translator.objectName()}")
 
         _LOGGER.debug("Building and showing main window")
         controller = Controller()
