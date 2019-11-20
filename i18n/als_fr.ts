@@ -296,12 +296,12 @@
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="437"/>
         <source>Workers</source>
-        <translation type="unfinished"></translation>
+        <translation>Modules</translation>
     </message>
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="443"/>
         <source>Queue size</source>
-        <translation>File d&apos;attente</translation>
+        <translation>Taille file d&apos;attente</translation>
     </message>
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="453"/>
@@ -336,7 +336,7 @@
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="656"/>
         <source>Processing</source>
-        <translation>Processing</translation>
+        <translation>Traitements</translation>
     </message>
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="672"/>
@@ -361,7 +361,7 @@
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="727"/>
         <source>Strength</source>
-        <translation>Niveau</translation>
+        <translation>Force</translation>
     </message>
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="963"/>
@@ -391,7 +391,7 @@
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="807"/>
         <source>midtones</source>
-        <translation type="unfinished"></translation>
+        <translation>exposition</translation>
     </message>
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="814"/>
