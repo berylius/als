@@ -14,7 +14,6 @@ _LOGGER = logging.getLogger(__name__)
 
 VERSION = als.__version__
 
-WORKER_STATUS_BUSY = "Busy"
 WORKER_STATUS_IDLE = "-"
 
 IMAGE_SAVE_TYPE_TIFF = "tiff"
@@ -37,6 +36,7 @@ class LocalizedStrings:
     STACKING_MODE_MEAN = "TEMP"
     STRETCH_MODE_LOCAL = "TEMP"
     STRETCH_MODE_GLOBAL = "TEMP"
+    WORKER_STATUS_BUSY = "TEMP"
 
 
 # pylint: disable=R0902, R0903

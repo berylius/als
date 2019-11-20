@@ -11,7 +11,7 @@ import als.model.data
 from als import config
 from als.code_utilities import log
 from als.logic import Controller
-from als.model.data import VERSION, DYNAMIC_DATA, WORKER_STATUS_BUSY
+from als.model.data import VERSION, DYNAMIC_DATA, LocalizedStrings
 from generated.about_ui import Ui_AboutDialog
 from generated.prefs_ui import Ui_PrefsDialog
 from generated.save_wait_ui import Ui_SaveWaitDialog
@@ -194,7 +194,7 @@ class SaveWaitDialog(QDialog):
                 DYNAMIC_DATA.stacker_status,
                 DYNAMIC_DATA.post_processor_status,
         ]:
-            if status == WORKER_STATUS_BUSY:
+            if status == LocalizedStrings.WORKER_STATUS_BUSY:
                 remaining_image_save_count += 1
 
         for queue_size in [
@@ -210,7 +210,7 @@ class SaveWaitDialog(QDialog):
 
         remaining_image_save_count *= 1 + additional_saves_per_image
 
-        remaining_image_save_count += 1 if DYNAMIC_DATA.saver_status == WORKER_STATUS_BUSY else 0
+        remaining_image_save_count += 1 if DYNAMIC_DATA.saver_status == LocalizedStrings.WORKER_STATUS_BUSY else 0
         remaining_image_save_count += DYNAMIC_DATA.save_queue.qsize()
 
         return remaining_image_save_count

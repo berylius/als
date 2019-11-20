@@ -51,6 +51,11 @@
         <source>Global</source>
         <translation>Globale</translation>
     </message>
+    <message>
+        <location filename="../src/als/logic.py" line="86"/>
+        <source>Busy</source>
+        <translation>Occupé</translation>
+    </message>
 </context>
 <context>
     <name>PrefsDialog</name>

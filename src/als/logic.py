@@ -37,7 +37,7 @@ from als.io.network import get_ip, WebServer
 from als.io.output import ImageSaver
 from als.model.base import Image, Session
 from als.model.data import (
-    DYNAMIC_DATA, WORKER_STATUS_BUSY, WORKER_STATUS_IDLE,
+    DYNAMIC_DATA, WORKER_STATUS_IDLE,
     LocalizedStrings, STACKED_IMAGE_FILE_NAME_BASE,
     IMAGE_SAVE_TYPE_JPEG, WEB_SERVED_IMAGE_FILE_NAME_BASE
 )
@@ -83,6 +83,7 @@ class Controller(QObject):
         LocalizedStrings.STACKING_MODE_MEAN = self.tr("Mean")
         LocalizedStrings.STRETCH_MODE_LOCAL = self.tr("Local")
         LocalizedStrings.STRETCH_MODE_GLOBAL = self.tr("Global")
+        LocalizedStrings.WORKER_STATUS_BUSY = self.tr("Busy")
 
         DYNAMIC_DATA.session.set_status(Session.stopped)
         DYNAMIC_DATA.web_server_is_running = False
@@ -382,7 +383,7 @@ class Controller(QObject):
         """
         pre-processor just started working on new image
         """
-        DYNAMIC_DATA.pre_processor_status = WORKER_STATUS_BUSY
+        DYNAMIC_DATA.pre_processor_status = LocalizedStrings.WORKER_STATUS_BUSY
         self._notify_model_observers()
 
     @log
@@ -398,7 +399,7 @@ class Controller(QObject):
         """
         stacker just started working on new image
         """
-        DYNAMIC_DATA.stacker_status = WORKER_STATUS_BUSY
+        DYNAMIC_DATA.stacker_status = LocalizedStrings.WORKER_STATUS_BUSY
         self._notify_model_observers()
 
     @log
@@ -414,7 +415,7 @@ class Controller(QObject):
         """
         post-processor just started working on new image
         """
-        DYNAMIC_DATA.post_processor_status = WORKER_STATUS_BUSY
+        DYNAMIC_DATA.post_processor_status = LocalizedStrings.WORKER_STATUS_BUSY
         self._notify_model_observers()
 
     @log
@@ -430,7 +431,7 @@ class Controller(QObject):
         """
         saver just started working on new image
         """
-        DYNAMIC_DATA.saver_status = WORKER_STATUS_BUSY
+        DYNAMIC_DATA.saver_status = LocalizedStrings.WORKER_STATUS_BUSY
         self._notify_model_observers()
 
     @log
