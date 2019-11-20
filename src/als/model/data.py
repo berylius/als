@@ -35,6 +35,8 @@ class LocalizedStrings:
 
     STACKING_MODE_SUM = "TEMP"
     STACKING_MODE_MEAN = "TEMP"
+    STRETCH_MODE_LOCAL = "TEMP"
+    STRETCH_MODE_GLOBAL = "TEMP"
 
 
 # pylint: disable=R0902, R0903

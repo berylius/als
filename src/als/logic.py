@@ -81,6 +81,8 @@ class Controller(QObject):
         # init i18n static strings
         LocalizedStrings.STACKING_MODE_SUM = self.tr("Sum")
         LocalizedStrings.STACKING_MODE_MEAN = self.tr("Mean")
+        LocalizedStrings.STRETCH_MODE_LOCAL = self.tr("Local")
+        LocalizedStrings.STRETCH_MODE_GLOBAL = self.tr("Global")
 
         DYNAMIC_DATA.session.set_status(Session.stopped)
         DYNAMIC_DATA.web_server_is_running = False

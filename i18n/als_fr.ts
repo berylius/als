@@ -41,6 +41,16 @@
         <source>Mean</source>
         <translation>Moyenne</translation>
     </message>
+    <message>
+        <location filename="../src/als/logic.py" line="84"/>
+        <source>Local</source>
+        <translation>Locale</translation>
+    </message>
+    <message>
+        <location filename="../src/als/logic.py" line="85"/>
+        <source>Global</source>
+        <translation>Globale</translation>
+    </message>
 </context>
 <context>
     <name>PrefsDialog</name>
