@@ -32,29 +32,78 @@
 <context>
     <name>LocalizedStrings</name>
     <message>
-        <location filename="../src/als/model/data.py" line="48"/>
-        <source>Sum</source>
-        <translation>Somme</translation>
+        <location filename="../src/als/model/data.py" line="59"/>
+        <source>sum</source>
+        <translation>somme</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="49"/>
-        <source>Mean</source>
-        <translation>Moyenne</translation>
+        <location filename="../src/als/model/data.py" line="60"/>
+        <source>mean</source>
+        <translation>moyenne</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="50"/>
-        <source>Local</source>
-        <translation>Locale</translation>
+        <location filename="../src/als/model/data.py" line="61"/>
+        <source>local</source>
+        <translation>local</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="51"/>
-        <source>Global</source>
-        <translation>Globale</translation>
+        <location filename="../src/als/model/data.py" line="62"/>
+        <source>global</source>
+        <translation>global</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="52"/>
-        <source>Busy</source>
-        <translation>Occupé</translation>
+        <location filename="../src/als/model/data.py" line="63"/>
+        <source>busy</source>
+        <translation>occupé</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="64"/>
+        <source>scanner</source>
+        <translation>scanneur</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="65"/>
+        <source>of</source>
+        <translation>de</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="66"/>
+        <source>running</source>
+        <comment>gender m</comment>
+        <translation>démarré</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="67"/>
+        <source>running</source>
+        <comment>gender f</comment>
+        <translation>démarrée</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="68"/>
+        <source>stopped</source>
+        <comment>gender m</comment>
+        <translation>stoppé</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="69"/>
+        <source>stopped</source>
+        <comment>gender f</comment>
+        <translation>stoppée</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="71"/>
+        <source>web server</source>
+        <translation>serveur web</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="70"/>
+        <source>paused</source>
+        <translation>en pause</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="72"/>
+        <source>address</source>
+        <translation>adresse</translation>
     </message>
 </context>
 <context>

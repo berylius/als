@@ -523,24 +523,26 @@ class MainWindow(QMainWindow):
             session_is_stopped = session.is_stopped
             session_is_paused = session.is_paused
 
-            # update running statuses
-            scanner_status_message = f"Scanner on {config.get_scan_folder_path()} : "
-            scanner_status_message += f"Running" if session_is_running else "Stopped"
+            # update scanner statuses
+            scanner_status_message = f"{LocalizedStrings.SCANNER} {LocalizedStrings.OF} {config.get_scan_folder_path()} : "
+            scanner_status_message += f"{LocalizedStrings.RUNNING_M}" if session_is_running else f"{LocalizedStrings.STOPPED_M}"
             self._ui.lbl_scanner_status.setText(scanner_status_message)
 
+            # update web server status
             if web_server_is_running:
                 url = f"http://{DYNAMIC_DATA.web_server_ip}:{config.get_www_server_port_number()}"
-                webserver_status = f'Started, reachable at <a href="{url}" style="color: #CC0000">{url}</a>'
+                webserver_status = f'{LocalizedStrings.RUNNING_M}, ' \
+                                   f'{LocalizedStrings.ADDRESS} =  <a href="{url}" style="color: #CC0000">{url}</a>'
             else:
-                webserver_status = "Stopped"
-            self._ui.lbl_web_server_status.setText(f"Web server : {webserver_status}")
+                webserver_status = LocalizedStrings.STOPPED_M
+            self._ui.lbl_web_server_status.setText(f"{LocalizedStrings.WEB_SERVER} : {webserver_status}")
 
             if session_is_stopped:
-                session_status = "Stopped"
+                session_status = LocalizedStrings.STOPPED_F
             elif session_is_paused:
-                session_status = "Paused"
+                session_status = LocalizedStrings.PAUSED
             elif session_is_running:
-                session_status = "Running"
+                session_status = LocalizedStrings.RUNNING_F
             else:
                 # this should never happen, that's why we check ;)
                 session_status = "### BUG !"

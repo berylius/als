@@ -40,15 +40,36 @@ class LocalizedStrings(QObject):
     STRETCH_MODE_GLOBAL = "TEMP"
     WORKER_STATUS_BUSY = "TEMP"
 
+    SCANNER = "TEMP"
+    OF = "TEMP"
+
+    RUNNING_M = "TEMP"
+    RUNNING_F = "TEMP"
+    STOPPED_M = "TEMP"
+    STOPPED_F = "TEMP"
+    PAUSED = "TEMP"
+
+    WEB_SERVER = "TEMP"
+    ADDRESS = "TEMP"
+
     def setup(self):
         """
         Sets real values for localized strings
         """
-        LocalizedStrings.STACKING_MODE_SUM = self.tr("Sum")
-        LocalizedStrings.STACKING_MODE_MEAN = self.tr("Mean")
-        LocalizedStrings.STRETCH_MODE_LOCAL = self.tr("Local")
-        LocalizedStrings.STRETCH_MODE_GLOBAL = self.tr("Global")
-        LocalizedStrings.WORKER_STATUS_BUSY = self.tr("Busy")
+        LocalizedStrings.STACKING_MODE_SUM = self.tr("sum")
+        LocalizedStrings.STACKING_MODE_MEAN = self.tr("mean")
+        LocalizedStrings.STRETCH_MODE_LOCAL = self.tr("local")
+        LocalizedStrings.STRETCH_MODE_GLOBAL = self.tr("global")
+        LocalizedStrings.WORKER_STATUS_BUSY = self.tr("busy")
+        LocalizedStrings.SCANNER = self.tr("scanner")
+        LocalizedStrings.OF = self.tr("of")
+        LocalizedStrings.RUNNING_M = self.tr("running", "gender m")
+        LocalizedStrings.RUNNING_F = self.tr("running", "gender f")
+        LocalizedStrings.STOPPED_M = self.tr("stopped", "gender m")
+        LocalizedStrings.STOPPED_F = self.tr("stopped", "gender f")
+        LocalizedStrings.PAUSED = self.tr("paused")
+        LocalizedStrings.WEB_SERVER = self.tr("web server")
+        LocalizedStrings.ADDRESS = self.tr("address")
 
 
 # pylint: disable=R0902, R0903
