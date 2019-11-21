@@ -353,22 +353,22 @@
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="397"/>
         <source>Save current image to disk</source>
-        <translation>Sauver l&apos;image courante sur disque</translation>
+        <translation>Enregristre l&apos;image courante sur disque</translation>
     </message>
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="400"/>
         <source>Save current</source>
-        <translation>Sauve image courante</translation>
+        <translation>Enr. image courante</translation>
     </message>
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="419"/>
         <source>Save every new image in a timestamped file</source>
-        <translation>Sauve chaque image dans un fichier horodaté</translation>
+        <translation>Enregistre chaque image dans un fichier horodaté</translation>
     </message>
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="422"/>
         <source>Save every frame</source>
-        <translation>Sauve chaque image</translation>
+        <translation>Enr. chaque image</translation>
     </message>
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="437"/>
@@ -443,7 +443,7 @@
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="963"/>
         <source>Reset</source>
-        <translation>Reset</translation>
+        <translation>Défaut</translation>
     </message>
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="970"/>
