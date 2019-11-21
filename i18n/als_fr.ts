@@ -30,29 +30,29 @@
     </message>
 </context>
 <context>
-    <name>Controller</name>
+    <name>LocalizedStrings</name>
     <message>
-        <location filename="../src/als/logic.py" line="82"/>
+        <location filename="../src/als/model/data.py" line="48"/>
         <source>Sum</source>
         <translation>Somme</translation>
     </message>
     <message>
-        <location filename="../src/als/logic.py" line="83"/>
+        <location filename="../src/als/model/data.py" line="49"/>
         <source>Mean</source>
         <translation>Moyenne</translation>
     </message>
     <message>
-        <location filename="../src/als/logic.py" line="84"/>
+        <location filename="../src/als/model/data.py" line="50"/>
         <source>Local</source>
         <translation>Locale</translation>
     </message>
     <message>
-        <location filename="../src/als/logic.py" line="85"/>
+        <location filename="../src/als/model/data.py" line="51"/>
         <source>Global</source>
         <translation>Globale</translation>
     </message>
     <message>
-        <location filename="../src/als/logic.py" line="86"/>
+        <location filename="../src/als/model/data.py" line="52"/>
         <source>Busy</source>
         <translation>Occupé</translation>
     </message>
@@ -166,12 +166,12 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/als/main.py" line="72"/>
+        <location filename="../src/als/main.py" line="74"/>
         <source>Astro Live Stacker version {} started in {} ms.</source>
         <translation>Astro Live Stacker version {} démarré en {} ms.</translation>
     </message>
     <message>
-        <location filename="../src/als/main.py" line="79"/>
+        <location filename="../src/als/main.py" line="81"/>
         <source>Astro Live Stacker terminated with return code = {}</source>
         <translation>Astro Live Stacker terminé avec code de retour = {}</translation>
     </message>

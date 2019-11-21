@@ -27,8 +27,6 @@ from datetime import datetime
 from pathlib import Path
 from typing import List
 
-from PyQt5.QtCore import QObject
-
 from als import config
 from als.code_utilities import log, AlsException, SignalingQueue
 from als.crunching import compute_histograms_for_display
@@ -65,7 +63,7 @@ class WebServerStartFailure(AlsException):
 
 
 # pylint: disable=R0902, R0904
-class Controller(QObject):
+class Controller:
     """
     The application controller, in charge of implementing application logic
     """
@@ -74,16 +72,6 @@ class Controller(QObject):
 
     @log
     def __init__(self):
-        # pylint: disable=R0915
-
-        QObject.__init__(self)
-
-        # init i18n static strings
-        LocalizedStrings.STACKING_MODE_SUM = self.tr("Sum")
-        LocalizedStrings.STACKING_MODE_MEAN = self.tr("Mean")
-        LocalizedStrings.STRETCH_MODE_LOCAL = self.tr("Local")
-        LocalizedStrings.STRETCH_MODE_GLOBAL = self.tr("Global")
-        LocalizedStrings.WORKER_STATUS_BUSY = self.tr("Busy")
 
         DYNAMIC_DATA.session.set_status(Session.stopped)
         DYNAMIC_DATA.web_server_is_running = False

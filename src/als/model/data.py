@@ -6,6 +6,8 @@ from typing import List
 
 import numpy as np
 
+from PyQt5.QtCore import QObject
+
 import als
 from als.code_utilities import SignalingQueue, log
 from als.model.base import Session
@@ -25,11 +27,11 @@ WEB_SERVED_IMAGE_FILE_NAME_BASE = "web_image"
 
 
 # pylint: disable=R0903
-class LocalizedStrings:
+class LocalizedStrings(QObject):
     """
     Holds global localized strings.
 
-    All strings are initialized with dummy text and MUST be defined in Controller.__init__()
+    All strings are initialized with dummy text and MUST be defined in setup()
     """
 
     STACKING_MODE_SUM = "TEMP"
@@ -37,6 +39,16 @@ class LocalizedStrings:
     STRETCH_MODE_LOCAL = "TEMP"
     STRETCH_MODE_GLOBAL = "TEMP"
     WORKER_STATUS_BUSY = "TEMP"
+
+    def setup(self):
+        """
+        Sets real values for localized strings
+        """
+        LocalizedStrings.STACKING_MODE_SUM = self.tr("Sum")
+        LocalizedStrings.STACKING_MODE_MEAN = self.tr("Mean")
+        LocalizedStrings.STRETCH_MODE_LOCAL = self.tr("Local")
+        LocalizedStrings.STRETCH_MODE_GLOBAL = self.tr("Global")
+        LocalizedStrings.WORKER_STATUS_BUSY = self.tr("Busy")
 
 
 # pylint: disable=R0902, R0903
