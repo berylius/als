@@ -13,7 +13,7 @@ from als import config
 from als.config import CouldNotSaveConfig
 from als.logic import Controller, SessionError, CriticalFolderMissing, WebServerStartFailure
 from als.code_utilities import log
-from als.model.data import DYNAMIC_DATA, LocalizedStrings
+from als.model.data import DYNAMIC_DATA, I18n
 from als.ui.dialogs import PreferencesDialog, AboutDialog, error_box, warning_box, SaveWaitDialog, question, message_box
 from als.ui.params_utils import update_controls_from_params, update_params_from_controls, reset_params, \
     set_sliders_defaults
@@ -42,7 +42,7 @@ class MainWindow(QMainWindow):
 
         # populate stacking mode combo box=
         self._ui.cb_stacking_mode.blockSignals(True)
-        stacking_modes = [LocalizedStrings.STACKING_MODE_SUM, LocalizedStrings.STACKING_MODE_MEAN]
+        stacking_modes = [I18n.STACKING_MODE_SUM, I18n.STACKING_MODE_MEAN]
         for stacking_mode in stacking_modes:
             self._ui.cb_stacking_mode.addItem(stacking_mode)
         self._ui.cb_stacking_mode.setCurrentIndex(stacking_modes.index(self._controller.get_stacking_mode()))
@@ -524,25 +524,25 @@ class MainWindow(QMainWindow):
             session_is_paused = session.is_paused
 
             # update scanner statuses
-            scanner_status_message = f"{LocalizedStrings.SCANNER} {LocalizedStrings.OF} {config.get_scan_folder_path()} : "
-            scanner_status_message += f"{LocalizedStrings.RUNNING_M}" if session_is_running else f"{LocalizedStrings.STOPPED_M}"
+            scanner_status_message = f"{I18n.SCANNER} {I18n.OF} {config.get_scan_folder_path()} : "
+            scanner_status_message += f"{I18n.RUNNING_M}" if session_is_running else f"{I18n.STOPPED_M}"
             self._ui.lbl_scanner_status.setText(scanner_status_message)
 
             # update web server status
             if web_server_is_running:
                 url = f"http://{DYNAMIC_DATA.web_server_ip}:{config.get_www_server_port_number()}"
-                webserver_status = f'{LocalizedStrings.RUNNING_M}, ' \
-                                   f'{LocalizedStrings.ADDRESS} =  <a href="{url}" style="color: #CC0000">{url}</a>'
+                webserver_status = f'{I18n.RUNNING_M}, ' \
+                                   f'{I18n.ADDRESS} =  <a href="{url}" style="color: #CC0000">{url}</a>'
             else:
-                webserver_status = LocalizedStrings.STOPPED_M
-            self._ui.lbl_web_server_status.setText(f"{LocalizedStrings.WEB_SERVER} : {webserver_status}")
+                webserver_status = I18n.STOPPED_M
+            self._ui.lbl_web_server_status.setText(f"{I18n.WEB_SERVER} : {webserver_status}")
 
             if session_is_stopped:
-                session_status = LocalizedStrings.STOPPED_F
+                session_status = I18n.STOPPED_F
             elif session_is_paused:
-                session_status = LocalizedStrings.PAUSED
+                session_status = I18n.PAUSED
             elif session_is_running:
-                session_status = LocalizedStrings.RUNNING_F
+                session_status = I18n.RUNNING_F
             else:
                 # this should never happen, that's why we check ;)
                 session_status = "### BUG !"

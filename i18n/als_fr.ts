@@ -30,7 +30,20 @@
     </message>
 </context>
 <context>
-    <name>LocalizedStrings</name>
+    <name>HistogramView</name>
+    <message>
+        <location filename="../src/als/ui/widgets.py" line="162"/>
+        <source>Invalid data</source>
+        <translation>Données invalides</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/widgets.py" line="165"/>
+        <source>No data</source>
+        <translation>Pas de données</translation>
+    </message>
+</context>
+<context>
+    <name>I18n</name>
     <message>
         <location filename="../src/als/model/data.py" line="59"/>
         <source>sum</source>
@@ -91,14 +104,14 @@
         <translation>stoppée</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="71"/>
-        <source>web server</source>
-        <translation>serveur web</translation>
-    </message>
-    <message>
         <location filename="../src/als/model/data.py" line="70"/>
         <source>paused</source>
         <translation>en pause</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="71"/>
+        <source>web server</source>
+        <translation>serveur web</translation>
     </message>
     <message>
         <location filename="../src/als/model/data.py" line="72"/>

@@ -27,7 +27,7 @@ WEB_SERVED_IMAGE_FILE_NAME_BASE = "web_image"
 
 
 # pylint: disable=R0903
-class LocalizedStrings(QObject):
+class I18n(QObject):
     """
     Holds global localized strings.
 
@@ -56,20 +56,20 @@ class LocalizedStrings(QObject):
         """
         Sets real values for localized strings
         """
-        LocalizedStrings.STACKING_MODE_SUM = self.tr("sum")
-        LocalizedStrings.STACKING_MODE_MEAN = self.tr("mean")
-        LocalizedStrings.STRETCH_MODE_LOCAL = self.tr("local")
-        LocalizedStrings.STRETCH_MODE_GLOBAL = self.tr("global")
-        LocalizedStrings.WORKER_STATUS_BUSY = self.tr("busy")
-        LocalizedStrings.SCANNER = self.tr("scanner")
-        LocalizedStrings.OF = self.tr("of")
-        LocalizedStrings.RUNNING_M = self.tr("running", "gender m")
-        LocalizedStrings.RUNNING_F = self.tr("running", "gender f")
-        LocalizedStrings.STOPPED_M = self.tr("stopped", "gender m")
-        LocalizedStrings.STOPPED_F = self.tr("stopped", "gender f")
-        LocalizedStrings.PAUSED = self.tr("paused")
-        LocalizedStrings.WEB_SERVER = self.tr("web server")
-        LocalizedStrings.ADDRESS = self.tr("address")
+        I18n.STACKING_MODE_SUM = self.tr("sum")
+        I18n.STACKING_MODE_MEAN = self.tr("mean")
+        I18n.STRETCH_MODE_LOCAL = self.tr("local")
+        I18n.STRETCH_MODE_GLOBAL = self.tr("global")
+        I18n.WORKER_STATUS_BUSY = self.tr("busy")
+        I18n.SCANNER = self.tr("scanner")
+        I18n.OF = self.tr("of")
+        I18n.RUNNING_M = self.tr("running", "gender m")
+        I18n.RUNNING_F = self.tr("running", "gender f")
+        I18n.STOPPED_M = self.tr("stopped", "gender m")
+        I18n.STOPPED_F = self.tr("stopped", "gender f")
+        I18n.PAUSED = self.tr("paused")
+        I18n.WEB_SERVER = self.tr("web server")
+        I18n.ADDRESS = self.tr("address")
 
 
 # pylint: disable=R0902, R0903

@@ -16,7 +16,7 @@ from PyQt5.QtWidgets import QApplication
 from als import config
 from als.logic import Controller
 from als.code_utilities import Timer
-from als.model.data import VERSION, LocalizedStrings
+from als.model.data import VERSION, I18n
 from als.ui.windows import MainWindow
 
 _LOGGER = logging.getLogger(__name__)
@@ -87,7 +87,7 @@ def main():
             if app.installTranslator(translator):
                 _LOGGER.debug(f"Translator successfully installed for {translator.objectName()}")
 
-        LocalizedStrings().setup()
+        I18n().setup()
 
         _LOGGER.debug("Building and showing main window")
         controller = Controller()

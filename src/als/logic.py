@@ -36,7 +36,7 @@ from als.io.output import ImageSaver
 from als.model.base import Image, Session
 from als.model.data import (
     DYNAMIC_DATA, WORKER_STATUS_IDLE,
-    LocalizedStrings, STACKED_IMAGE_FILE_NAME_BASE,
+    I18n, STACKED_IMAGE_FILE_NAME_BASE,
     IMAGE_SAVE_TYPE_JPEG, WEB_SERVED_IMAGE_FILE_NAME_BASE
 )
 from als.model.params import ProcessingParameter
@@ -93,7 +93,7 @@ class Controller:
 
         self._stacker_queue: SignalingQueue = DYNAMIC_DATA.stacker_queue
         self._stacker: Stacker = Stacker(self._stacker_queue)
-        self._stacker.stacking_mode = LocalizedStrings.STACKING_MODE_MEAN
+        self._stacker.stacking_mode = I18n.STACKING_MODE_MEAN
         self._stacker.align_before_stack = True
         self._stacker.start()
 
@@ -371,7 +371,7 @@ class Controller:
         """
         pre-processor just started working on new image
         """
-        DYNAMIC_DATA.pre_processor_status = LocalizedStrings.WORKER_STATUS_BUSY
+        DYNAMIC_DATA.pre_processor_status = I18n.WORKER_STATUS_BUSY
         self._notify_model_observers()
 
     @log
@@ -387,7 +387,7 @@ class Controller:
         """
         stacker just started working on new image
         """
-        DYNAMIC_DATA.stacker_status = LocalizedStrings.WORKER_STATUS_BUSY
+        DYNAMIC_DATA.stacker_status = I18n.WORKER_STATUS_BUSY
         self._notify_model_observers()
 
     @log
@@ -403,7 +403,7 @@ class Controller:
         """
         post-processor just started working on new image
         """
-        DYNAMIC_DATA.post_processor_status = LocalizedStrings.WORKER_STATUS_BUSY
+        DYNAMIC_DATA.post_processor_status = I18n.WORKER_STATUS_BUSY
         self._notify_model_observers()
 
     @log
@@ -419,7 +419,7 @@ class Controller:
         """
         saver just started working on new image
         """
-        DYNAMIC_DATA.saver_status = LocalizedStrings.WORKER_STATUS_BUSY
+        DYNAMIC_DATA.saver_status = I18n.WORKER_STATUS_BUSY
         self._notify_model_observers()
 
     @log

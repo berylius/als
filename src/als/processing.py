@@ -12,7 +12,7 @@ from skimage import exposure
 
 from als.code_utilities import log, Timer, SignalingQueue
 from als.model.base import Image
-from als.model.data import LocalizedStrings
+from als.model.data import I18n
 from als.model.params import ProcessingParameter, RangeParameter, SwitchParameter, ListParameter
 
 _LOGGER = logging.getLogger(__name__)
@@ -172,8 +172,8 @@ class AutoStretch(ImageProcessor):
             ListParameter(
                 "stretch method",
                 "autostretch method",
-                default=LocalizedStrings.STRETCH_MODE_GLOBAL,
-                choices=[LocalizedStrings.STRETCH_MODE_GLOBAL, LocalizedStrings.STRETCH_MODE_LOCAL]))
+                default=I18n.STRETCH_MODE_GLOBAL,
+                choices=[I18n.STRETCH_MODE_GLOBAL, I18n.STRETCH_MODE_LOCAL]))
 
         self._parameters.append(
             RangeParameter(
