@@ -120,6 +120,66 @@
     </message>
 </context>
 <context>
+    <name>MainWindow</name>
+    <message>
+        <location filename="../src/als/ui/windows.py" line="601"/>
+        <source>Web server access is limited</source>
+        <translation>L&apos;accès au serveur web est limité</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/windows.py" line="602"/>
+        <source>Web server IP address is 127.0.0.1.
+
+Server won&apos;t be reachable by other machines. Please check your network connection</source>
+        <translation>L&apos;adresse du serveur web est 127.0.0.1
+
+Le serveur ne sera pas joignable par d&apos;autres machines. Veuillez vérifier votre configuration réseau</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/windows.py" line="625"/>
+        <source>Session started</source>
+        <translation>Session démarrée</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/windows.py" line="625"/>
+        <source>Session successfully started after retry</source>
+        <translation>Session démarrée après une nouvelle tentative</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/windows.py" line="630"/>
+        <source>Would you like to open the preferences box ?</source>
+        <translation>Désirez-vous ouvrir l&apos;écran des préférences ?</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/windows.py" line="636"/>
+        <source>Session start aborted</source>
+        <translation>Démarrage de session abandonné</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/windows.py" line="652"/>
+        <source>Stopping the current session will reset the stack and all image enhancements.
+
+Are you sure you want to stop the current session ?</source>
+        <translation>Stopper la session courante remettra le stack et les traitements à zéro.
+
+Etes-vous sûr de vouloir stopper la session courante ?</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/windows.py" line="656"/>
+        <source>Really stop session ?</source>
+        <translation>Vraiment stopper la session ?</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/windows.py" line="685"/>
+        <source>Your settings could not be saved
+
+Details : {}</source>
+        <translation>Vos réglages n&apos;ont pas pu être sauvegardés
+
+Détails : {}</translation>
+    </message>
+</context>
+<context>
     <name>PrefsDialog</name>
     <message>
         <location filename="../src/als/ui/prefs_ui.ui" line="14"/>
@@ -228,12 +288,12 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/als/main.py" line="74"/>
+        <location filename="../src/als/main.py" line="75"/>
         <source>Astro Live Stacker version {} started in {} ms.</source>
         <translation>Astro Live Stacker version {} démarré en {} ms.</translation>
     </message>
     <message>
-        <location filename="../src/als/main.py" line="81"/>
+        <location filename="../src/als/main.py" line="82"/>
         <source>Astro Live Stacker terminated with return code = {}</source>
         <translation>Astro Live Stacker terminé avec code de retour = {}</translation>
     </message>

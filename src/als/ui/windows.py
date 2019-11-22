@@ -290,7 +290,7 @@ class MainWindow(QMainWindow):
             config.set_window_geometry((window_rect.x(), window_rect.y(), window_rect.width(), window_rect.height()))
 
         config.set_full_screen_active(self.isFullScreen())
-        MainWindow._save_config()
+        self._save_config()
 
         self._stop_session()
 
@@ -598,9 +598,9 @@ class MainWindow(QMainWindow):
         try:
             self._controller.start_www()
             if DYNAMIC_DATA.web_server_ip == "127.0.0.1":
-                title = "Web server access is limited"
-                message = "Web server IP address is 127.0.0.1.\n\nServer won't be reachable by other " \
-                          "machines. Please check your network connection"
+                title = self.tr("Web server access is limited")
+                message = self.tr("Web server IP address is 127.0.0.1.\n\nServer won't be reachable by other machines. "
+                                  "Please check your network connection")
                 warning_box(title, message)
         except WebServerStartFailure as start_failure:
             error_box(start_failure.message, start_failure.details)
@@ -622,18 +622,18 @@ class MainWindow(QMainWindow):
         try:
             self._controller.start_session()
             if is_retry:
-                message_box("Session started", "Session successfully started after retry")
+                message_box(self.tr("Session started"), self.tr("Session successfully started after retry"))
 
         except CriticalFolderMissing as folder_missing:
 
-            text = folder_missing.details
-            text += "\n\n Would you like to open the preferences box ?"
+            text = folder_missing.details + "\n\n"
+            text += self.tr("Would you like to open the preferences box ?")
 
             if question(folder_missing.message, text) and self._open_preferences():
                 self._start_session(is_retry=True)
 
         except SessionError as session_error:
-            error_box(session_error.message, str(session_error.details) + "\n\nSession start aborted")
+            error_box(session_error.message, str(session_error.details) + "\n\n" + self.tr("Session start aborted"))
 
     @log
     def _stop_session(self, ask_confirmation: bool = True):
@@ -650,10 +650,10 @@ class MainWindow(QMainWindow):
 
             if ask_confirmation and DYNAMIC_DATA.stack_size > 0:
                 message = (
-                    "Stopping the current session will reset the stack and all image enhancements.\n\n"
-                    "Are you sure you want to stop the current session ?")
+                    self.tr("Stopping the current session will reset the stack and all image enhancements.\n\n"
+                            "Are you sure you want to stop the current session ?"))
 
-                do_stop_session = question("Really stop session ?",
+                do_stop_session = question(self.tr("Really stop session ?"),
                                            message,
                                            default_yes=False)
 
@@ -663,7 +663,7 @@ class MainWindow(QMainWindow):
     @log
     def _open_preferences(self):
         """
-        Opens preferences dialog box and return True if dilaog was closed using "OK"
+        Opens preferences dialog box and return True if dialog was closed using "OK"
 
         :return: Was the dilaog closed with "OK" ?
         :rtype: bool
@@ -676,11 +676,10 @@ class MainWindow(QMainWindow):
 
         return accepted
 
-    @staticmethod
     @log
-    def _save_config():
+    def _save_config(self):
 
         try:
             config.save()
         except CouldNotSaveConfig as save_error:
-            error_box(save_error.message, f"Your settings could not be saved\n\nDetails : {save_error.details}")
+            error_box(save_error.message, self.tr("Your settings could not be saved\n\nDetails : {}").format(save_error.details))
