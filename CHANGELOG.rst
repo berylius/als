@@ -5,6 +5,10 @@ Changelog
 Version 0.7 (work in progress)
 ==============================
 
+- New features
+
+  - Add french translation
+
 - Improvements
 
   - Log to file
