@@ -66,26 +66,27 @@ def main():
             sheet = style_file.read()
             app.setStyleSheet(sheet)
 
-        # get system locale and install translators
-        system_locale = locale.getlocale()[0]
-        _LOGGER.debug(f"Detected system locale = {system_locale}")
-        locale_prefix = system_locale[:system_locale.find("_")]
-        _LOGGER.debug(f"System locale prefix = {locale_prefix}")
-        i18n_folder_path = Path(__file__).parent.parent.parent / 'i18n'
-        _LOGGER.debug(f"i18n folder path = {i18n_folder_path}")
+        if "--no-i18n" not in sys.argv:
+            # get system locale and install translators
+            system_locale = locale.getlocale()[0]
+            _LOGGER.debug(f"Detected system locale = {system_locale}")
+            locale_prefix = system_locale[:system_locale.find("_")]
+            _LOGGER.debug(f"System locale prefix = {locale_prefix}")
+            i18n_folder_path = Path(__file__).parent.parent.parent / 'i18n'
+            _LOGGER.debug(f"i18n folder path = {i18n_folder_path}")
 
-        translators = list()
-        for component in ["als", "qtbase"]:
-            i18n_file_name = f'{component}_{locale_prefix}'
-            translator = QTranslator()
-            if translator.load(i18n_file_name, str(i18n_folder_path)):
-                _LOGGER.debug(f"Translation successfully loaded for {i18n_file_name}")
-                translator.setObjectName(i18n_file_name)
-                translators.append(translator)
+            translators = list()
+            for component in ["als", "qtbase"]:
+                i18n_file_name = f'{component}_{locale_prefix}'
+                translator = QTranslator()
+                if translator.load(i18n_file_name, str(i18n_folder_path)):
+                    _LOGGER.debug(f"Translation successfully loaded for {i18n_file_name}")
+                    translator.setObjectName(i18n_file_name)
+                    translators.append(translator)
 
-        for translator in translators:
-            if app.installTranslator(translator):
-                _LOGGER.debug(f"Translator successfully installed for {translator.objectName()}")
+            for translator in translators:
+                if app.installTranslator(translator):
+                    _LOGGER.debug(f"Translator successfully installed for {translator.objectName()}")
 
         I18n().setup()
 
