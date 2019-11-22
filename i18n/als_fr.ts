@@ -57,12 +57,12 @@
     <message>
         <location filename="../src/als/model/data.py" line="61"/>
         <source>local</source>
-        <translation>local</translation>
+        <translation>locale</translation>
     </message>
     <message>
         <location filename="../src/als/model/data.py" line="62"/>
         <source>global</source>
-        <translation>global</translation>
+        <translation>globale</translation>
     </message>
     <message>
         <location filename="../src/als/model/data.py" line="63"/>
