@@ -6,9 +6,9 @@ For now, we only save some images to disk, but who knows...
 import logging
 
 import cv2
+from PyQt5.QtCore import QT_TRANSLATE_NOOP
 
 import als.model.data
-from PyQt5.QtCore import QT_TRANSLATE_NOOP
 from als.code_utilities import log, SignalingQueue
 from als.messaging import MESSAGE_HUB
 from als.model.base import Image

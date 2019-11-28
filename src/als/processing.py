@@ -8,10 +8,10 @@ from typing import List
 import cv2
 import numpy as np
 from PyQt5.QtCore import QThread, pyqtSignal, QT_TRANSLATE_NOOP
-from als.messaging import MESSAGE_HUB
 from skimage import exposure
 
 from als.code_utilities import log, Timer, SignalingQueue
+from als.messaging import MESSAGE_HUB
 from als.model.base import Image
 from als.model.data import I18n
 from als.model.params import ProcessingParameter, RangeParameter, SwitchParameter, ListParameter

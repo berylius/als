@@ -8,7 +8,6 @@ import time
 from abc import abstractmethod
 from pathlib import Path
 
-from als.messaging import MESSAGE_HUB
 from astropy.io import fits
 from PyQt5.QtCore import QFileInfo, pyqtSignal, QObject, QT_TRANSLATE_NOOP
 from rawpy import imread
@@ -18,6 +17,7 @@ from watchdog.observers.polling import PollingObserver
 
 from als import config
 from als.code_utilities import log
+from als.messaging import MESSAGE_HUB
 from als.model.base import Image
 
 _LOGGER = logging.getLogger(__name__)
