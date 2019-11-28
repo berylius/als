@@ -100,12 +100,10 @@ class AppLauncher(QObject):
 
             window.reset_image_view()
 
-        start_message = QtCore.QT_TRANSLATE_NOOP(
-            "AppLauncher",
-            "Astro Live Stacker version {} started in {} ms.")
+        start_message = QtCore.QT_TRANSLATE_NOOP("", "Astro Live Stacker version {} started in {} ms.")
 
-        _LOGGER.info(start_message).format(VERSION, startup.elapsed_in_milli_as_str)
-        MESSAGE_HUB.dispatch_info(app.translate("AppLauncher", start_message).format(VERSION, startup.elapsed_in_milli_as_str))
+        _LOGGER.info(start_message.format(VERSION, startup.elapsed_in_milli_as_str))
+        MESSAGE_HUB.dispatch_info(app.translate("", start_message).format(VERSION, startup.elapsed_in_milli_as_str))
 
         app_return_code = app.exec()
         controller.shutdown()

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="">
+<context>
+    <name></name>
+    <message>
+        <location filename="../src/als/main.py" line="78"/>
+        <source>Astro Live Stacker version {} started in {} ms.</source>
+        <translation>Astro Live Stacker version {} démarré en {} ms.</translation>
+    </message>
+</context>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -27,14 +34,6 @@
         <location filename="../src/als/ui/about_ui.ui" line="196"/>
         <source>OK</source>
         <translation>OK</translation>
-    </message>
-</context>
-<context>
-    <name>AppLauncher</name>
-    <message>
-        <location filename="../src/als/main.py" line="78"/>
-        <source>Astro Live Stacker version {} started in {} ms.</source>
-        <translation>Astro Live Stacker version {} démarré en {} ms.</translation>
     </message>
 </context>
 <context>
