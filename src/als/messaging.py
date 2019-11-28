@@ -1,7 +1,10 @@
 """
 Provides features for in-app communications
 """
-from PyQt5.QtCore import QObject, pyqtSignal
+import logging
+
+from PyQt5.QtCore import QObject, pyqtSignal, QCoreApplication
+from als.code_utilities import get_timestamp
 
 
 class MessageHub(QObject):
@@ -15,21 +18,73 @@ class MessageHub(QObject):
     def __init__(self):
         QObject.__init__(self)
 
-    def _dispatch_message(self, message: str):
+    def _dispatch_message(self, log_func, flag: str, message: str, values: list):
+        """
+        Dispatches message to log function and Qt signal.
 
-        self.message_signal.emit(message)
+        Message is formatted if values list is not None
 
-    def dispatch_info(self, message: str):
+        :param log_func: logging function
+        :type log_func: function
+        :param flag: textual flag describing message level (INFO, WARN, ERROR)
+        :type flag: str
+        :param message: the message
+        :type message: str
+        :param values: values used for formatting
+        :type values: list
+        """
 
-        self._dispatch_message(message)
+        if values:
+            log_func(message.format(*values))
+            self.message_signal.emit(
+                get_timestamp() + " " + flag.ljust(8) + ": " + QCoreApplication.translate("", message).format(*values))
 
-    def dispatch_warning(self, message: str):
+        else:
+            log_func(message)
+            self.message_signal.emit(
+                get_timestamp() + " " + flag.ljust(8) + ": " + QCoreApplication.translate("", message))
 
-        self._dispatch_message(message)
+    def dispatch_info(self, name: str, message: str, values: list = None):
+        """
+        Dispatches information message.
 
-    def dispatch_error(self, message: str):
+        :param name: the logger name
+        :type name: str
+        :param message: the message
+        :type message: str
+        :param values: values used for message formatting
+        :type values: list
+        """
 
-        self._dispatch_message(message)
+        self._dispatch_message(logging.getLogger(name).info, "INFO", message, values)
+
+    def dispatch_warning(self, name: str, message: str, values: list = None):
+        """
+        Dispatches warning message.
+
+        :param name: the logger name
+        :type name: str
+        :param message: the message
+        :type message: str
+        :param values: values used for message formatting
+        :type values: list
+        """
+
+        self._dispatch_message(logging.getLogger(name).warning, "WARNING", message, values)
+
+    def dispatch_error(self, name: str, message: str, values: list = None):
+        """
+        Dispatches error message.
+
+        :param name: the logger name
+        :type name: str
+        :param message: the message
+        :type message: str
+        :param values: values used for message formatting
+        :type values: list
+        """
+
+        self._dispatch_message(logging.getLogger(name).error, "ERROR", message, values)
 
     def add_receiver(self, receiver):
         """

@@ -23,12 +23,11 @@ import gettext
 import logging
 import os
 import shutil
-from datetime import datetime
 from pathlib import Path
 from typing import List
 
 from als import config
-from als.code_utilities import log, AlsException, SignalingQueue
+from als.code_utilities import log, AlsException, SignalingQueue, get_timestamp
 from als.crunching import compute_histograms_for_display
 from als.io.input import InputScanner, ScannerStartError
 from als.io.network import get_ip, WebServer
@@ -629,7 +628,7 @@ class Controller:
         filename_base = filename_base
 
         if add_timestamp:
-            filename_base += '-' + Controller.get_timestamp()
+            filename_base += '-' + get_timestamp().replace(' ', "-").replace(":", '-').replace('.', '-')
 
         image_to_save = image.clone()
         image_to_save.destination = dest_folder_path + "/" + filename_base + '.' + file_extension
@@ -652,19 +651,6 @@ class Controller:
 
         self._saver.stop()
         self._saver.wait()
-
-    @staticmethod
-    @log
-    def get_timestamp():
-        """
-        Return a timestamp build from current date and time
-
-        :return: the timestamp
-        :rtype: str
-        """
-        timestamp = str(datetime.fromtimestamp(datetime.timestamp(datetime.now())))
-        timestamp = timestamp.replace(' ', "-").replace(":", '-').replace('.', '-')
-        return timestamp
 
     @log
     def _stop_input_scanner(self):
