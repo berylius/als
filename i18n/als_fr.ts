@@ -53,6 +53,31 @@
         <source>Session running in mode {} with alignment {}</source>
         <translation>Session démarrée en mode {} avec alignement {}</translation>
     </message>
+    <message>
+        <location filename="../src/als/processing.py" line="444"/>
+        <source>Start {} on {}</source>
+        <translation>Démarrage {} sur {}</translation>
+    </message>
+    <message>
+        <location filename="../src/als/processing.py" line="449"/>
+        <source>End {} on {} in {} ms</source>
+        <translation>Fin de {} sur {} en {} ms</translation>
+    </message>
+    <message>
+        <location filename="../src/als/processing.py" line="463"/>
+        <source>{} stopped</source>
+        <translation>{} stoppé</translation>
+    </message>
+    <message>
+        <location filename="../src/als/io/input.py" line="196"/>
+        <source>Successful image read from {}</source>
+        <translation>Image chargée avec succès depuis {}</translation>
+    </message>
+    <message>
+        <location filename="../src/als/io/output.py" line="59"/>
+        <source>Image saved : {}</source>
+        <translation>Image sauvée : {}</translation>
+    </message>
 </context>
 <context>
     <name>AboutDialog</name>

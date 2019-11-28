@@ -8,8 +8,9 @@ import time
 from abc import abstractmethod
 from pathlib import Path
 
+from als.messaging import MESSAGE_HUB
 from astropy.io import fits
-from PyQt5.QtCore import QFileInfo, pyqtSignal, QObject
+from PyQt5.QtCore import QFileInfo, pyqtSignal, QObject, QT_TRANSLATE_NOOP
 from rawpy import imread
 from rawpy._rawpy import LibRawNonFatalError, LibRawFatalError
 from watchdog.events import FileSystemEventHandler
@@ -192,7 +193,11 @@ def read_disk_image(path: Path):
             image = _read_raw_image(path)
 
         if image is not None:
-            _LOGGER.info(f"Successful image read from {image.origin}")
+            MESSAGE_HUB.dispatch_info(
+                __name__,
+                QT_TRANSLATE_NOOP("", "Successful image read from {}"),
+                [image.origin, ]
+            )
 
     return image
 

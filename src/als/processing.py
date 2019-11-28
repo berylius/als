@@ -7,7 +7,8 @@ from typing import List
 
 import cv2
 import numpy as np
-from PyQt5.QtCore import QThread, pyqtSignal
+from PyQt5.QtCore import QThread, pyqtSignal, QT_TRANSLATE_NOOP
+from als.messaging import MESSAGE_HUB
 from skimage import exposure
 
 from als.code_utilities import log, Timer, SignalingQueue
@@ -440,12 +441,15 @@ class QueueConsumer(QThread):
 
                 self.busy_signal.emit()
                 image = self._queue.get()
-                _LOGGER.info(f"Start {self._name} on {image.origin}")
+                MESSAGE_HUB.dispatch_info(__name__, QT_TRANSLATE_NOOP("", "Start {} on {}"), [self._name, image.origin])
 
                 with Timer() as timer:
                     self._handle_image(image)
 
-                _LOGGER.info(f"End {self._name} on {image.origin} in {timer.elapsed_in_milli_as_str} ms")
+                MESSAGE_HUB.dispatch_info(
+                    __name__,
+                    QT_TRANSLATE_NOOP("", "End {} on {} in {} ms"),
+                    [self._name, image.origin, timer.elapsed_in_milli_as_str])
                 self.waiting_signal.emit()
 
             self.msleep(20)
@@ -456,7 +460,7 @@ class QueueConsumer(QThread):
         Sets flag that will interrupt the main loop in run()
         """
         self._stop_asked = True
-        _LOGGER.info(f"{self._name} stopped")
+        MESSAGE_HUB.dispatch_info(__name__, QT_TRANSLATE_NOOP("", "{} stopped"), [self._name, ])
 
 
 class Pipeline(QueueConsumer):

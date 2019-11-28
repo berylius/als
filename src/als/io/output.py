@@ -8,7 +8,9 @@ import logging
 import cv2
 
 import als.model.data
+from PyQt5.QtCore import QT_TRANSLATE_NOOP
 from als.code_utilities import log, SignalingQueue
+from als.messaging import MESSAGE_HUB
 from als.model.base import Image
 from als.processing import QueueConsumer
 
@@ -54,8 +56,11 @@ class ImageSaver(QueueConsumer):
             save_is_successful, failure_details = False, f"Unsupported File format for {target_path}"
 
         if save_is_successful:
-            message = f"Image saved : {target_path}"
-            _LOGGER.info(message)
+            MESSAGE_HUB.dispatch_info(
+                __name__,
+                QT_TRANSLATE_NOOP("", "Image saved : {}"),
+                [target_path, ]
+            )
 
         else:
             message = f"Failed to save image : {target_path}"
