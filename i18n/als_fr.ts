@@ -4,9 +4,54 @@
 <context>
     <name></name>
     <message>
-        <location filename="../src/als/main.py" line="78"/>
+        <location filename="../src/als/main.py" line="75"/>
         <source>Astro Live Stacker version {} started in {} ms.</source>
         <translation>Astro Live Stacker version {} démarré en {} ms.</translation>
+    </message>
+    <message>
+        <location filename="../src/als/logic.py" line="442"/>
+        <source>Starting new session...</source>
+        <translation>Démarrage nouvelle session...</translation>
+    </message>
+    <message>
+        <location filename="../src/als/logic.py" line="460"/>
+        <source>Restarting input scanner ...</source>
+        <translation>Redémarrage scanneur d&apos;entrée...</translation>
+    </message>
+    <message>
+        <location filename="../src/als/logic.py" line="465"/>
+        <source>Input scanner started</source>
+        <translation>Scanneur d&apos;entrée démarré</translation>
+    </message>
+    <message>
+        <location filename="../src/als/logic.py" line="489"/>
+        <source>Session stopped</source>
+        <translation>Session stoppée</translation>
+    </message>
+    <message>
+        <location filename="../src/als/logic.py" line="499"/>
+        <source>Session paused</source>
+        <translation>Session en pause</translation>
+    </message>
+    <message>
+        <location filename="../src/als/logic.py" line="521"/>
+        <source>Web server started. Reachable at {}</source>
+        <translation>Serveur d&apos;image démarré. Joignable à {}</translation>
+    </message>
+    <message>
+        <location filename="../src/als/logic.py" line="540"/>
+        <source>Web server stopped</source>
+        <translation>Serveur d&apos;image stoppé</translation>
+    </message>
+    <message>
+        <location filename="../src/als/logic.py" line="656"/>
+        <source>Input scanner stopped</source>
+        <translation>Scanneur d&apos;entrée stoppé</translation>
+    </message>
+    <message>
+        <location filename="../src/als/logic.py" line="469"/>
+        <source>Session running in mode {} with alignment {}</source>
+        <translation>Session démarrée en mode {} avec alignement {}</translation>
     </message>
 </context>
 <context>

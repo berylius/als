@@ -26,12 +26,14 @@ import shutil
 from pathlib import Path
 from typing import List
 
+from PyQt5.QtCore import QT_TRANSLATE_NOOP
 from als import config
 from als.code_utilities import log, AlsException, SignalingQueue, get_timestamp
 from als.crunching import compute_histograms_for_display
 from als.io.input import InputScanner, ScannerStartError
 from als.io.network import get_ip, WebServer
 from als.io.output import ImageSaver
+from als.messaging import MESSAGE_HUB
 from als.model.base import Image, Session
 from als.model.data import (
     DYNAMIC_DATA, WORKER_STATUS_IDLE,
@@ -437,7 +439,7 @@ class Controller:
         try:
             if DYNAMIC_DATA.session.is_stopped:
 
-                _LOGGER.info("Starting new session...")
+                MESSAGE_HUB.dispatch_info(__name__, QT_TRANSLATE_NOOP("", "Starting new session..."))
 
                 self._stacker.reset()
 
@@ -455,18 +457,19 @@ class Controller:
 
             else:
                 # session was paused when this start was ordered. No need for checks & setup
-                _LOGGER.info("Restarting input scanner ...")
+                MESSAGE_HUB.dispatch_info(__name__, QT_TRANSLATE_NOOP("", "Restarting input scanner ..."))
 
             # start input scanner
             try:
                 self._input_scanner.start()
-                _LOGGER.info("Input scanner started")
+                MESSAGE_HUB.dispatch_info(__name__, QT_TRANSLATE_NOOP("", "Input scanner started"))
             except ScannerStartError as scanner_start_error:
                 raise SessionError("Input scanner could not start", scanner_start_error)
 
-            running_mode = f"{self._stacker.stacking_mode}"
-            running_mode += " with alignment" if self._stacker.align_before_stack else " without alignment"
-            _LOGGER.info(f"Session running in mode {running_mode}")
+            MESSAGE_HUB.dispatch_info(
+                __name__,
+                QT_TRANSLATE_NOOP("", "Session running in mode {} with alignment {}"),
+                [self._stacker.stacking_mode, self._stacker.align_before_stack])
             DYNAMIC_DATA.session.set_status(Session.running)
 
         except SessionError as session_error:
@@ -483,7 +486,7 @@ class Controller:
             Controller.purge_queue(self._pre_process_queue)
             Controller.purge_queue(self._stacker_queue)
             Controller.purge_queue(self._post_process_queue)
-            _LOGGER.info("Session stopped")
+            MESSAGE_HUB.dispatch_info(__name__, QT_TRANSLATE_NOOP("", "Session stopped"))
             DYNAMIC_DATA.session.set_status(Session.stopped)
 
     @log
@@ -493,7 +496,7 @@ class Controller:
         """
         if DYNAMIC_DATA.session.is_running:
             self._stop_input_scanner()
-        _LOGGER.info("Session paused")
+        MESSAGE_HUB.dispatch_info(__name__, QT_TRANSLATE_NOOP("", "Session paused"))
         DYNAMIC_DATA.session.set_status(Session.paused)
 
     @log
@@ -514,13 +517,8 @@ class Controller:
             self._web_server = WebServer(work_folder)
             self._web_server.start()
 
-            if ip_address == "127.0.0.1":
-                log_function = _LOGGER.warning
-            else:
-                log_function = _LOGGER.info
-
             url = f"http://{ip_address}:{port_number}"
-            log_function(f"Web server started. Reachable at {url}")
+            MESSAGE_HUB.dispatch_info(__name__, QT_TRANSLATE_NOOP("", "Web server started. Reachable at {}"), [url, ])
 
             DYNAMIC_DATA.web_server_ip = ip_address
             DYNAMIC_DATA.web_server_is_running = True
@@ -539,7 +537,7 @@ class Controller:
             self._web_server.stop()
             self._web_server.join()
             self._web_server = None
-            _LOGGER.info("Web server stopped")
+            MESSAGE_HUB.dispatch_info(__name__, QT_TRANSLATE_NOOP("", "Web server stopped"))
             DYNAMIC_DATA.web_server_is_running = False
             self._notify_model_observers()
 
@@ -655,4 +653,4 @@ class Controller:
     @log
     def _stop_input_scanner(self):
         self._input_scanner.stop()
-        _LOGGER.info("Input scanner stopped")
+        MESSAGE_HUB.dispatch_info(__name__, QT_TRANSLATE_NOOP("", "Input scanner stopped"))
