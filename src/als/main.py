@@ -6,17 +6,18 @@ import logging
 import os
 import platform
 import sys
-
 from pathlib import Path
 
 import psutil
-from PyQt5.QtCore import QTranslator
+from PyQt5 import QtCore
+from PyQt5.QtCore import QTranslator, QObject
 from PyQt5.QtWidgets import QApplication
 
 from als import config
-from als.logic import Controller
 from als.code_utilities import Timer
-from als.model.data import VERSION, I18n
+from als.logic import Controller
+from als.messaging import MESSAGE_HUB
+from als.model.data import I18n, VERSION
 from als.ui.windows import MainWindow
 
 _LOGGER = logging.getLogger(__name__)
@@ -42,72 +43,80 @@ def log_sys_info():
     _LOGGER.debug("***************************************************************************")
 
 
-def main():
+class AppLauncher(QObject):
     """
     Application launcher
     """
+    def __int__(self):
+        QObject.__init__(self)
 
-    with Timer() as startup:
-        app = QApplication(sys.argv)
-        config.setup()
+    def run(self):
 
-        log_sys_info()
+        with Timer() as startup:
+            app = QApplication(sys.argv)
+            config.setup()
+            log_sys_info()
 
-        # look for existing "Stacker" processes and kill them
-        #
-        # Those Stacker processes are leftovers from a previous ALS crash occurring while stacking
-        # using multiprocessing
-        for process in psutil.process_iter():
-            if process.name() == "Stacker" and process.status() != psutil.STATUS_ZOMBIE:
-                process.kill()
+            # look for existing "Stacker" processes and kill them
+            #
+            # Those Stacker processes are leftovers from a previous ALS crash occurring while stacking
+            # using multiprocessing
+            for process in psutil.process_iter():
+                if process.name() == "Stacker":
+                    process.kill()
 
-        with open(Path(__file__).parent / "main.css", "r") as style_file:
+            with open(Path(__file__).parent / "main.css", "r") as style_file:
 
-            sheet = style_file.read()
-            app.setStyleSheet(sheet)
+                sheet = style_file.read()
+                app.setStyleSheet(sheet)
 
-        if "--no-i18n" not in sys.argv:
-            # get system locale and install translators
-            system_locale = locale.getlocale()[0]
-            _LOGGER.debug(f"Detected system locale = {system_locale}")
-            locale_prefix = system_locale[:system_locale.find("_")]
-            _LOGGER.debug(f"System locale prefix = {locale_prefix}")
-            i18n_folder_path = Path(__file__).parent.parent.parent / 'i18n'
-            _LOGGER.debug(f"i18n folder path = {i18n_folder_path}")
+            if "--no-i18n" not in sys.argv:
+                # get system locale and install translators
+                system_locale = locale.getlocale()[0]
+                _LOGGER.debug(f"Detected system locale = {system_locale}")
+                locale_prefix = system_locale[:system_locale.find("_")]
+                _LOGGER.debug(f"System locale prefix = {locale_prefix}")
+                i18n_folder_path = Path(__file__).parent.parent.parent / 'i18n'
+                _LOGGER.debug(f"i18n folder path = {i18n_folder_path}")
 
-            translators = list()
-            for component in ["als", "qtbase"]:
-                i18n_file_name = f'{component}_{locale_prefix}'
-                translator = QTranslator()
-                if translator.load(i18n_file_name, str(i18n_folder_path)):
-                    _LOGGER.debug(f"Translation successfully loaded for {i18n_file_name}")
-                    translator.setObjectName(i18n_file_name)
-                    translators.append(translator)
+                translators = list()
+                for component in ["als", "qtbase"]:
+                    i18n_file_name = f'{component}_{locale_prefix}'
+                    translator = QTranslator()
+                    if translator.load(i18n_file_name, str(i18n_folder_path)):
+                        _LOGGER.debug(f"Translation successfully loaded for {i18n_file_name}")
+                        translator.setObjectName(i18n_file_name)
+                        translators.append(translator)
 
-            for translator in translators:
-                if app.installTranslator(translator):
-                    _LOGGER.debug(f"Translator successfully installed for {translator.objectName()}")
+                for translator in translators:
+                    if app.installTranslator(translator):
+                        _LOGGER.debug(f"Translator successfully installed for {translator.objectName()}")
 
-        I18n().setup()
+            I18n().setup()
 
-        _LOGGER.debug("Building and showing main window")
-        controller = Controller()
-        window = MainWindow(controller)
+            _LOGGER.debug("Building and showing main window")
+            controller = Controller()
+            window = MainWindow(controller)
 
-        window.reset_image_view()
+            window.reset_image_view()
 
-    _LOGGER.info(QApplication.translate(
-        "main",
-        "Astro Live Stacker version {} started in {} ms.").format(VERSION, startup.elapsed_in_milli_as_str))
+        start_message = QtCore.QT_TRANSLATE_NOOP(
+            "AppLauncher",
+            "Astro Live Stacker version {} started in {} ms.")
 
-    app_return_code = app.exec()
-    controller.shutdown()
+        _LOGGER.info(start_message).format(VERSION, startup.elapsed_in_milli_as_str)
+        MESSAGE_HUB.dispatch_info(app.translate("AppLauncher", start_message).format(VERSION, startup.elapsed_in_milli_as_str))
 
-    _LOGGER.info(QApplication.translate(
-        "main",
-        "Astro Live Stacker terminated with return code = {}").format(app_return_code))
+        app_return_code = app.exec()
+        controller.shutdown()
 
-    sys.exit(app_return_code)
+        _LOGGER.info(f"Astro Live Stacker terminated with return code = {app_return_code}")
+
+        sys.exit(app_return_code)
+
+
+def main():
+    AppLauncher().run()
 
 
 if __name__ == "__main__":

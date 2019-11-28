@@ -6,6 +6,7 @@ import logging
 from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtGui import QPixmap, QBrush, QColor
 from PyQt5.QtWidgets import QMainWindow, QGraphicsScene, QGraphicsPixmapItem, QDialog
+from als.messaging import MESSAGE_HUB
 from qimage2ndarray import array2qimage
 
 import als.model.data
@@ -115,8 +116,6 @@ class MainWindow(QMainWindow):
         self._controller.add_model_observer(self)
         self.update_display()
 
-        config.register_log_receiver(self)
-
         self.setGeometry(*config.get_window_geometry())
 
         # manage docks restoration out of 'image only' mode
@@ -134,6 +133,8 @@ class MainWindow(QMainWindow):
             self._ui.action_full_screen.setChecked(True)
         else:
             self.show()
+
+        MESSAGE_HUB.add_receiver(self)
 
     @log
     @pyqtSlot(bool)
@@ -496,11 +497,11 @@ class MainWindow(QMainWindow):
 
         self._start_session()
 
-    def on_log_message(self, message):
+    def on_message(self, message):
         """
-        print received log message to GUI log window
+        print received message to GUI log window
 
-        :param message: the log message
+        :param message: the message
         :type message: str
         """
         self._ui.log.addItem(message)
