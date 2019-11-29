@@ -4,13 +4,14 @@ Provides all dialogs used in ALS GUI
 import logging
 from pathlib import Path
 
-from PyQt5.QtCore import pyqtSlot
+from PyQt5.QtCore import pyqtSlot, QT_TRANSLATE_NOOP
 from PyQt5.QtWidgets import QDialog, QFileDialog, QMessageBox, QApplication
 
 import als.model.data
 from als import config
 from als.code_utilities import log
 from als.logic import Controller
+from als.messaging import MESSAGE_HUB
 from als.model.data import VERSION, DYNAMIC_DATA, I18n
 from generated.about_ui import Ui_AboutDialog
 from generated.prefs_ui import Ui_PrefsDialog
@@ -72,9 +73,9 @@ class PreferencesDialog(QDialog):
         if web_server_port_number_str.isdigit() and 1024 <= int(web_server_port_number_str) <= 65535:
             config.set_www_server_port_number(web_server_port_number_str)
         else:
-            message = "Web server port number must be a number between 1024 and 65535"
-            error_box("Wrong value", message)
-            _LOGGER.error(f"Port number validation failed : {message}")
+            message = self.tr("Web server port number must be a number between 1024 and 65535")
+            error_box(self.tr("Wrong value"), message)
+            MESSAGE_HUB.dispatch_error(__name__, QT_TRANSLATE_NOOP("", "Port number validation failed : {}"), [message,])
             self._ui.ln_web_server_port.setFocus()
             self._ui.ln_web_server_port.selectAll()
             return

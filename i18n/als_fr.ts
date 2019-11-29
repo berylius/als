@@ -24,27 +24,27 @@
         <translation>Scanneur d&apos;entrée démarré</translation>
     </message>
     <message>
-        <location filename="../src/als/logic.py" line="489"/>
+        <location filename="../src/als/logic.py" line="491"/>
         <source>Session stopped</source>
         <translation>Session stoppée</translation>
     </message>
     <message>
-        <location filename="../src/als/logic.py" line="499"/>
+        <location filename="../src/als/logic.py" line="501"/>
         <source>Session paused</source>
         <translation>Session en pause</translation>
     </message>
     <message>
-        <location filename="../src/als/logic.py" line="521"/>
+        <location filename="../src/als/logic.py" line="523"/>
         <source>Web server started. Reachable at {}</source>
         <translation>Serveur d&apos;image démarré. Joignable à {}</translation>
     </message>
     <message>
-        <location filename="../src/als/logic.py" line="540"/>
+        <location filename="../src/als/logic.py" line="543"/>
         <source>Web server stopped</source>
         <translation>Serveur d&apos;image stoppé</translation>
     </message>
     <message>
-        <location filename="../src/als/logic.py" line="656"/>
+        <location filename="../src/als/logic.py" line="659"/>
         <source>Input scanner stopped</source>
         <translation>Scanneur d&apos;entrée stoppé</translation>
     </message>
@@ -87,6 +87,36 @@
         <location filename="../src/als/processing.py" line="487"/>
         <source>Error applying process &apos;{}&apos; to image {} : {} *** Image will be ignored</source>
         <translation>Erreur en exécutant process {} à l&apos;image {} : {} *** L&apos;image sera ignorée</translation>
+    </message>
+    <message>
+        <location filename="../src/als/logic.py" line="476"/>
+        <source>Session error. {} : {}</source>
+        <translation>Erreur de session {} : {}</translation>
+    </message>
+    <message>
+        <location filename="../src/als/logic.py" line="531"/>
+        <source>Could not start web server</source>
+        <translation>Impossible de démarrer le serveur web</translation>
+    </message>
+    <message>
+        <location filename="../src/als/logic.py" line="530"/>
+        <source>Could not start web server : {}</source>
+        <translation>Impossible de démarrer le serveur web : {}</translation>
+    </message>
+    <message>
+        <location filename="../src/als/io/input.py" line="322"/>
+        <source>Error reading from file {} : {}</source>
+        <translation>Erreur de lecture fichier {} : {}</translation>
+    </message>
+    <message>
+        <location filename="../src/als/io/output.py" line="71"/>
+        <source>Failed to save image : {}</source>
+        <translation>Echec de sauvegarde image {}</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/dialogs.py" line="78"/>
+        <source>Port number validation failed : {}</source>
+        <translation>Numéro de port non valide : {}</translation>
     </message>
 </context>
 <context>
@@ -265,6 +295,19 @@ Details : {}</source>
         <translation>Vos réglages n&apos;ont pas pu être sauvegardés
 
 Détails : {}</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencesDialog</name>
+    <message>
+        <location filename="../src/als/ui/dialogs.py" line="76"/>
+        <source>Web server port number must be a number between 1024 and 65535</source>
+        <translation>Le numéro de port du serveur web doit être compris entre 1024 et 65535</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/dialogs.py" line="77"/>
+        <source>Wrong value</source>
+        <translation type="unfinished">Valeur incorrecte</translation>
     </message>
 </context>
 <context>

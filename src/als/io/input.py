@@ -319,7 +319,10 @@ def _read_raw_image(path: Path):
 
 @log
 def _report_fs_error(path: Path, error: Exception):
-    _LOGGER.error(f"Error reading from file {str(path.resolve())} : {str(error)}")
+    MESSAGE_HUB.dispatch_error(
+        __name__,
+        QT_TRANSLATE_NOOP("", "Error reading from file {} : {}"),
+        [str(path.resolve()), str(error)])
 
 
 @log

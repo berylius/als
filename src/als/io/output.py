@@ -63,10 +63,12 @@ class ImageSaver(QueueConsumer):
             )
 
         else:
-            message = f"Failed to save image : {target_path}"
+            details = target_path
+
             if failure_details.strip():
-                message += ' : ' + failure_details
-            _LOGGER.error(message)
+                details += ' : ' + failure_details
+
+            MESSAGE_HUB.dispatch_error(__name__, QT_TRANSLATE_NOOP("", "Failed to save image : {}"), [details, ])
 
     @staticmethod
     @log

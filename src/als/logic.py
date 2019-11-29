@@ -26,7 +26,7 @@ import shutil
 from pathlib import Path
 from typing import List
 
-from PyQt5.QtCore import QT_TRANSLATE_NOOP
+from PyQt5.QtCore import QT_TRANSLATE_NOOP, QCoreApplication
 from als import config
 from als.code_utilities import log, AlsException, SignalingQueue, get_timestamp
 from als.crunching import compute_histograms_for_display
@@ -473,7 +473,9 @@ class Controller:
             DYNAMIC_DATA.session.set_status(Session.running)
 
         except SessionError as session_error:
-            _LOGGER.error(f"Session error. {session_error.message} : {session_error.details}")
+            MESSAGE_HUB.dispatch_error(__name__,
+                                       QT_TRANSLATE_NOOP("", "Session error. {} : {}"),
+                                       [session_error.message, session_error.details])
             raise
 
     @log
@@ -525,9 +527,10 @@ class Controller:
             self._notify_model_observers()
 
         except OSError as os_error:
-            title = "Could not start web server"
-            _LOGGER.error(f"{title} : {os_error}")
-            raise WebServerStartFailure(title, str(os_error))
+            log_message = QT_TRANSLATE_NOOP("", "Could not start web server : {}")
+            error_title = QCoreApplication.translate("", "Could not start web server")
+            MESSAGE_HUB.dispatch_error(__name__, log_message, [str(os_error), ])
+            raise WebServerStartFailure(error_title, str(os_error))
 
     @log
     def stop_www(self):
