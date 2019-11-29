@@ -21,9 +21,10 @@ from multiprocessing import Process, Manager
 
 import astroalign as al
 import numpy as np
-from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtCore import pyqtSignal, QT_TRANSLATE_NOOP
 from skimage.transform import SimilarityTransform
 
+from als.messaging import MESSAGE_HUB
 from als.model.data import I18n
 from als.code_utilities import log, Timer
 from als.model.base import Image
@@ -181,7 +182,8 @@ class Stacker(QueueConsumer):
                 self._publish_stacking_result(image)
 
             except StackingError as stacking_error:
-                _LOGGER.warning(f"Could not stack image {image.origin} : {stacking_error}. Image is DISCARDED")
+                message = QT_TRANSLATE_NOOP("", "Could not stack image {} : {}. Image is DISCARDED")
+                MESSAGE_HUB.dispatch_warning(__name__, message, [image.origin, stacking_error])
 
     @log
     def _align_image(self, image):

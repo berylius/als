@@ -78,6 +78,16 @@
         <source>Image saved : {}</source>
         <translation>Image sauvée : {}</translation>
     </message>
+    <message>
+        <location filename="../src/als/stack.py" line="186"/>
+        <source>Could not stack image {} : {}. Image is DISCARDED</source>
+        <translation>Impossible de stacker l&apos;image {} : {}. L&apos;image est ABANDONNEE</translation>
+    </message>
+    <message>
+        <location filename="../src/als/processing.py" line="487"/>
+        <source>Error applying process &apos;{}&apos; to image {} : {} *** Image will be ignored</source>
+        <translation>Erreur en exécutant process {} à l&apos;image {} : {} *** L&apos;image sera ignorée</translation>
+    </message>
 </context>
 <context>
     <name>AboutDialog</name>

@@ -484,10 +484,8 @@ class Pipeline(QueueConsumer):
             self.new_result_signal.emit(image)
 
         except ProcessingError as processing_error:
-            _LOGGER.warning(
-                f"Error applying process '{processor.__class__.__name__}' to image {image} : "
-                f"{processing_error} *** "
-                f"Image will be ignored")
+            message = QT_TRANSLATE_NOOP("", "Error applying process '{}' to image {} : {} *** Image will be ignored")
+            MESSAGE_HUB.dispatch_warning(__name__, message, [processor.__class__.__name__, image, processing_error])
 
     @log
     def add_process(self, process: ImageProcessor):
