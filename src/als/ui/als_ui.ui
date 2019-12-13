@@ -165,7 +165,7 @@
              <string>START</string>
             </property>
             <property name="shortcut">
-             <string notr="true">R</string>
+             <string>R</string>
             </property>
            </widget>
           </item>
@@ -204,7 +204,7 @@
              <string>PAUSE</string>
             </property>
             <property name="shortcut">
-             <string notr="true">R</string>
+             <string>R</string>
             </property>
            </widget>
           </item>
@@ -246,7 +246,7 @@
              <string>STOP</string>
             </property>
             <property name="shortcut">
-             <string notr="true">X</string>
+             <string>X</string>
             </property>
            </widget>
           </item>
@@ -284,7 +284,7 @@
              <string>Align</string>
             </property>
             <property name="shortcut">
-             <string notr="true">A</string>
+             <string>A</string>
             </property>
             <property name="checked">
              <bool>true</bool>
@@ -351,7 +351,7 @@
            <string>START</string>
           </property>
           <property name="shortcut">
-           <string notr="true">W</string>
+           <string>W</string>
           </property>
          </widget>
         </item>
@@ -367,7 +367,7 @@
            <string>STOP</string>
           </property>
           <property name="shortcut">
-           <string notr="true">W</string>
+           <string>W</string>
           </property>
          </widget>
         </item>
@@ -400,7 +400,7 @@
              <string>Save current</string>
             </property>
             <property name="shortcut">
-             <string notr="true">S</string>
+             <string>S</string>
             </property>
            </widget>
           </item>
@@ -422,7 +422,7 @@
              <string>Save every frame</string>
             </property>
             <property name="shortcut">
-             <string notr="true">F</string>
+             <string>F</string>
             </property>
            </widget>
           </item>

@@ -4,7 +4,7 @@
 <context>
     <name></name>
     <message>
-        <location filename="../src/als/main.py" line="75"/>
+        <location filename="../src/als/main.py" line="92"/>
         <source>Astro Live Stacker version {} started in {} ms.</source>
         <translation>Astro Live Stacker version {} démarré en {} ms.</translation>
     </message>
@@ -307,7 +307,7 @@ Détails : {}</translation>
     <message>
         <location filename="../src/als/ui/dialogs.py" line="77"/>
         <source>Wrong value</source>
-        <translation type="unfinished">Valeur incorrecte</translation>
+        <translation>Valeur incorrecte</translation>
     </message>
 </context>
 <context>
@@ -752,6 +752,31 @@ Détails : {}</translation>
         <location filename="../src/als/ui/als_ui.ui" line="1123"/>
         <source>Hide currently visible panels to maximize image display</source>
         <translation>Cacher les paneaux visibles pour maximiser l&apos;affichage de l&apos;image</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/als_ui.ui" line="249"/>
+        <source>X</source>
+        <translation>X</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/als_ui.ui" line="287"/>
+        <source>A</source>
+        <translation>A</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/als_ui.ui" line="370"/>
+        <source>W</source>
+        <translation>W</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/als_ui.ui" line="403"/>
+        <source>S</source>
+        <translation>S</translation>
+    </message>
+    <message>
+        <location filename="../src/als/ui/als_ui.ui" line="425"/>
+        <source>F</source>
+        <translation>F</translation>
     </message>
 </context>
 </TS>
