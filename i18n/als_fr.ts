@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="">
 <context>
     <name></name>
     <message>
-        <location filename="../src/als/main.py" line="92"/>
+        <location filename="../src/als/main.py" line="98"/>
         <source>Astro Live Stacker version {} started in {} ms.</source>
         <translation>Astro Live Stacker version {} démarré en {} ms.</translation>
     </message>
@@ -502,11 +501,6 @@ Détails : {}</translation>
         <location filename="../src/als/ui/als_ui.ui" line="299"/>
         <source>Mode:</source>
         <translation>Mode:</translation>
-    </message>
-    <message>
-        <location filename="../src/als/ui/als_ui.ui" line="551"/>
-        <source>0</source>
-        <translation></translation>
     </message>
     <message>
         <location filename="../src/als/ui/als_ui.ui" line="339"/>

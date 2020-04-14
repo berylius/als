@@ -323,7 +323,7 @@
            </font>
           </property>
           <property name="text">
-           <string>0</string>
+           <string notr="true">0</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -467,7 +467,7 @@
         <item row="1" column="1">
          <widget class="QLabel" name="lbl_pre_process_queue_size">
           <property name="text">
-           <string>0</string>
+           <string notr="true">0</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -494,7 +494,7 @@
         <item row="2" column="1">
          <widget class="QLabel" name="lbl_stack_queue_size">
           <property name="text">
-           <string>0</string>
+           <string notr="true">0</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -521,7 +521,7 @@
         <item row="3" column="1">
          <widget class="QLabel" name="lbl_process_queue_size">
           <property name="text">
-           <string>0</string>
+           <string notr="true">0</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -548,7 +548,7 @@
         <item row="4" column="1">
          <widget class="QLabel" name="lbl_save_queue_size">
           <property name="text">
-           <string>0</string>
+           <string notr="true">0</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
