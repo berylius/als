@@ -78,7 +78,7 @@
         <translation>Image sauvée : {}</translation>
     </message>
     <message>
-        <location filename="../src/als/stack.py" line="186"/>
+        <location filename="../src/als/stack.py" line="185"/>
         <source>Could not stack image {} : {}. Image is DISCARDED</source>
         <translation>Impossible de stacker l&apos;image {} : {}. L&apos;image est ABANDONNEE</translation>
     </message>
