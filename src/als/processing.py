@@ -77,7 +77,7 @@ class ColorBalance(ImageProcessor):
         self._parameters.append(
             SwitchParameter(
                 "active",
-                "RGB balance active",
+                I18n.TOOLTIP_RGB_ACTIVE,
                 default=True
             )
         )
@@ -85,7 +85,7 @@ class ColorBalance(ImageProcessor):
         self._parameters.append(
             RangeParameter(
                 "red",
-                "Red level",
+                I18n.TOOLTIP_RED_LEVEL,
                 default=1,
                 minimum=0,
                 maximum=2
@@ -95,7 +95,7 @@ class ColorBalance(ImageProcessor):
         self._parameters.append(
             RangeParameter(
                 "green",
-                "Green level",
+                I18n.TOOLTIP_GREEN_LEVEL,
                 default=1,
                 minimum=0,
                 maximum=2
@@ -105,7 +105,7 @@ class ColorBalance(ImageProcessor):
         self._parameters.append(
             RangeParameter(
                 "blue",
-                "Blue level",
+                I18n.TOOLTIP_BLUE_LEVEL,
                 default=1,
                 minimum=0,
                 maximum=2
@@ -166,20 +166,20 @@ class AutoStretch(ImageProcessor):
         self._parameters.append(
             SwitchParameter(
                 "active",
-                "autostretch active",
+                I18n.TOOLTIP_STRETCH_ACTIVE,
                 default=True))
 
         self._parameters.append(
             ListParameter(
                 "stretch method",
-                "autostretch method",
+                I18n.TOOLTIP_STRETCH_METHOD,
                 default=I18n.STRETCH_MODE_GLOBAL,
                 choices=[I18n.STRETCH_MODE_GLOBAL, I18n.STRETCH_MODE_LOCAL]))
 
         self._parameters.append(
             RangeParameter(
                 "strength",
-                "autostretch strength",
+                I18n.TOOLTIP_STRETCH_STRENGTH,
                 default=0.75,
                 minimum=0,
                 maximum=3))
@@ -249,13 +249,13 @@ class Levels(ImageProcessor):
         self._parameters.append(
             SwitchParameter(
                 "active",
-                "levels active",
+                I18n.TOOLTIP_LEVELS_ACTIVE,
                 default=True))
 
         self._parameters.append(
             RangeParameter(
                 "black",
-                "black level",
+                I18n.TOOLTIP_BLACK_LEVEL,
                 default=0,
                 minimum=0,
                 maximum=_16_BITS_MAX_VALUE))
@@ -263,7 +263,7 @@ class Levels(ImageProcessor):
         self._parameters.append(
             RangeParameter(
                 "mids",
-                "midtones level",
+                I18n.TOOLTIP_MIDTONES_LEVEL,
                 default=1,
                 minimum=0,
                 maximum=2))
@@ -271,7 +271,7 @@ class Levels(ImageProcessor):
         self._parameters.append(
             RangeParameter(
                 "white",
-                "while level",
+                I18n.TOOLTIP_WHITE_LEVEL,
                 default=_16_BITS_MAX_VALUE,
                 minimum=0,
                 maximum=_16_BITS_MAX_VALUE))

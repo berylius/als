@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="">
+<!DOCTYPE TS>
+<TS version="2.1" language="fr_FR">
 <context>
     <name></name>
     <message>
@@ -162,78 +163,133 @@
 <context>
     <name>I18n</name>
     <message>
-        <location filename="../src/als/model/data.py" line="59"/>
+        <location filename="../src/als/model/data.py" line="76"/>
         <source>sum</source>
         <translation>somme</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="60"/>
+        <location filename="../src/als/model/data.py" line="77"/>
         <source>mean</source>
         <translation>moyenne</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="61"/>
+        <location filename="../src/als/model/data.py" line="78"/>
         <source>local</source>
         <translation>locale</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="62"/>
+        <location filename="../src/als/model/data.py" line="79"/>
         <source>global</source>
         <translation>globale</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="63"/>
+        <location filename="../src/als/model/data.py" line="80"/>
         <source>busy</source>
         <translation>occupé</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="64"/>
+        <location filename="../src/als/model/data.py" line="81"/>
         <source>scanner</source>
         <translation>scanneur</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="65"/>
+        <location filename="../src/als/model/data.py" line="82"/>
         <source>of</source>
         <translation>de</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="66"/>
+        <location filename="../src/als/model/data.py" line="83"/>
         <source>running</source>
         <comment>gender m</comment>
         <translation>démarré</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="67"/>
+        <location filename="../src/als/model/data.py" line="84"/>
         <source>running</source>
         <comment>gender f</comment>
         <translation>démarrée</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="68"/>
+        <location filename="../src/als/model/data.py" line="85"/>
         <source>stopped</source>
         <comment>gender m</comment>
         <translation>stoppé</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="69"/>
+        <location filename="../src/als/model/data.py" line="86"/>
         <source>stopped</source>
         <comment>gender f</comment>
         <translation>stoppée</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="70"/>
+        <location filename="../src/als/model/data.py" line="87"/>
         <source>paused</source>
         <translation>en pause</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="71"/>
+        <location filename="../src/als/model/data.py" line="88"/>
         <source>web server</source>
         <translation>serveur web</translation>
     </message>
     <message>
-        <location filename="../src/als/model/data.py" line="72"/>
+        <location filename="../src/als/model/data.py" line="89"/>
         <source>address</source>
         <translation>adresse</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="90"/>
+        <source>Red level</source>
+        <translation>Niveau de rouge</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="91"/>
+        <source>Green level</source>
+        <translation>Niveau de vert</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="92"/>
+        <source>Blue level</source>
+        <translation>Niveau de bleu</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="93"/>
+        <source>Black level</source>
+        <translation>Niveau de noir</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="94"/>
+        <source>Midtones level</source>
+        <translation>Niveau moyen</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="95"/>
+        <source>White level</source>
+        <translation>Niveau de blanc</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="96"/>
+        <source>Autostretch strength</source>
+        <translation>Force de l&apos;autostretch</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="97"/>
+        <source>RGB balance active</source>
+        <translation>Balance RVB active</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="98"/>
+        <source>Autostretch active</source>
+        <translation>Autostretch actif</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="99"/>
+        <source>Levels active</source>
+        <translation>Niveaux actifs</translation>
+    </message>
+    <message>
+        <location filename="../src/als/model/data.py" line="100"/>
+        <source>Autostretch method</source>
+        <translation type="unfinished">Méthode d&apos;autostretch</translation>
     </message>
 </context>
 <context>

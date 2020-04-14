@@ -52,6 +52,23 @@ class I18n(QObject):
     WEB_SERVER = "TEMP"
     ADDRESS = "TEMP"
 
+    TOOLTIP_BLACK_LEVEL = "TEMP"
+    TOOLTIP_MIDTONES_LEVEL = "TEMP"
+    TOOLTIP_WHITE_LEVEL = "TEMP"
+
+    TOOLTIP_RED_LEVEL = "TEMP"
+    TOOLTIP_GREEN_LEVEL = "TEMP"
+    TOOLTIP_BLUE_LEVEL = "TEMP"
+
+    TOOLTIP_STRETCH_STRENGTH = "TEMP"
+
+    TOOLTIP_RGB_ACTIVE = "TEMP"
+    TOOLTIP_STRETCH_ACTIVE = "TEMP"
+    TOOLTIP_LEVELS_ACTIVE = "TEMP"
+
+    TOOLTIP_STRETCH_METHOD = "TEMP"
+
+
     def setup(self):
         """
         Sets real values for localized strings
@@ -70,6 +87,17 @@ class I18n(QObject):
         I18n.PAUSED = self.tr("paused")
         I18n.WEB_SERVER = self.tr("web server")
         I18n.ADDRESS = self.tr("address")
+        I18n.TOOLTIP_RED_LEVEL = self.tr("Red level")
+        I18n.TOOLTIP_GREEN_LEVEL = self.tr("Green level")
+        I18n.TOOLTIP_BLUE_LEVEL = self.tr("Blue level")
+        I18n.TOOLTIP_BLACK_LEVEL = self.tr("Black level")
+        I18n.TOOLTIP_MIDTONES_LEVEL = self.tr("Midtones level")
+        I18n.TOOLTIP_WHITE_LEVEL = self.tr("White level")
+        I18n.TOOLTIP_STRETCH_STRENGTH = self.tr("Autostretch strength")
+        I18n.TOOLTIP_RGB_ACTIVE = self.tr("RGB balance active")
+        I18n.TOOLTIP_STRETCH_ACTIVE = self.tr("Autostretch active")
+        I18n.TOOLTIP_LEVELS_ACTIVE = self.tr("Levels active")
+        I18n.TOOLTIP_STRETCH_METHOD = self.tr("Autostretch method")
 
 
 # pylint: disable=R0902, R0903
